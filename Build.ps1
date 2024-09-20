@@ -36,7 +36,7 @@ exec { & dotnet build -c Release CraftersCloud.Blueprint.sln }
 
 exec { & dotnet test -c Release CraftersCloud.Blueprint.sln --no-build -l trx --verbosity=normal }
 
-exec { & dotnet pack .\src\CraftersCloud.Core\dotnet pack .\CraftersCloud.Blueprint.Template\CraftersCloud.Blueprint.Template.Template.csproj -c Release -o $artifacts --no-build }
+exec { & dotnet pack CraftersCloud.Blueprint.Template.csproj -c Release -o $artifacts --no-build }
 
 
 
