@@ -1,4 +1,4 @@
-﻿using Enigmatry.Entry.Core.Entities;
+﻿using CraftersCloud.Core.Entities;
 
 namespace CraftersCloud.Blueprint.Core.Entities;
 

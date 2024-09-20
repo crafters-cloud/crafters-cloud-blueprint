@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using Enigmatry.Entry.AspNetCore.Validation;
+using CraftersCloud.Core.AspNetCore.Validation;
 using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;

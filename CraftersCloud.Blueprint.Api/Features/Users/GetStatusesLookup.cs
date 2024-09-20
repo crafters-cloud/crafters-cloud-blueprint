@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using CraftersCloud.Blueprint.Domain.Users;
-using Enigmatry.Entry.Core.Data;
+using CraftersCloud.Core.Data;
 using JetBrains.Annotations;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

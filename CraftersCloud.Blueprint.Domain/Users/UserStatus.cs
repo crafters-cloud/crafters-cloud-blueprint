@@ -1,4 +1,4 @@
-using Enigmatry.Entry.SmartEnums.Entities;
+using CraftersCloud.Core.SmartEnums.Entities;
 using JetBrains.Annotations;
 
 namespace CraftersCloud.Blueprint.Domain.Users;

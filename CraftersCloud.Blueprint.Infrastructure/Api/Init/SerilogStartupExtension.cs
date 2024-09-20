@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
-using Enigmatry.Entry.AspNetCore.ApplicationInsights;
-using Enigmatry.Entry.Core.Helpers;
-using Enigmatry.Entry.Core.Settings;
+using CraftersCloud.Core.AspNetCore.ApplicationInsights;
+using CraftersCloud.Core.Helpers;
+using CraftersCloud.Core.Settings;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,5 +1,5 @@
 ﻿using CraftersCloud.Blueprint.Domain.Products;
-using Enigmatry.Entry.Core.Data;
+using CraftersCloud.Core.Data;
 using JetBrains.Annotations;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

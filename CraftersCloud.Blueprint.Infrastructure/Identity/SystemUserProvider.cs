@@ -1,6 +1,6 @@
 ﻿using CraftersCloud.Blueprint.Domain.Identity;
-using Enigmatry.Entry.Core.Data;
-using Enigmatry.Entry.Core.Entities;
+using CraftersCloud.Core.Data;
+using CraftersCloud.Core.Entities;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;

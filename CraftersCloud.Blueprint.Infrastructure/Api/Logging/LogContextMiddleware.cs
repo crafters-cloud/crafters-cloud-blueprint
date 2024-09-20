@@ -1,5 +1,5 @@
 ﻿using CraftersCloud.Blueprint.Domain.Identity;
-using Enigmatry.Entry.AspNetCore.Filters;
+using CraftersCloud.Core.AspNetCore.Filters;
 using JetBrains.Annotations;
 using Microsoft.AspNetCore.Http;
 using Serilog.Context;

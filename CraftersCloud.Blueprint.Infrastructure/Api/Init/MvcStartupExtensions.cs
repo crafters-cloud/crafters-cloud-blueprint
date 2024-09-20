@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
-using Enigmatry.Entry.AspNetCore.Filters;
-using Enigmatry.Entry.SmartEnums.SystemTextJson;
+using CraftersCloud.Core.AspNetCore.Filters;
+using CraftersCloud.Core.SmartEnums.SystemTextJson;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 

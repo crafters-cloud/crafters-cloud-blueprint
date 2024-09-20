@@ -20,5 +20,5 @@ public static class LoggerConfigurationExtensions
             .MinimumLevel.Override("Microsoft.EntityFrameworkCore.Database.Command", LogEventLevel.Warning)
             .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
             .MinimumLevel.Override("Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware", LogEventLevel.Error)
-            .MinimumLevel.Override("Enigmatry.Entry.MediatR.LoggingBehavior", LogEventLevel.Error);
+            .MinimumLevel.Override("CraftersCloud.Core.MediatR.LoggingBehavior", LogEventLevel.Error);
 }

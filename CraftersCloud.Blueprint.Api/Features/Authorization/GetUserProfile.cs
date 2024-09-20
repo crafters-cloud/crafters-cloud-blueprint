@@ -2,9 +2,9 @@
 using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Identity;
 using CraftersCloud.Blueprint.Domain.Users;
-using Enigmatry.Entry.Core.Data;
-using Enigmatry.Entry.Core.Entities;
-using Enigmatry.Entry.Core.EntityFramework;
+using CraftersCloud.Core.Data;
+using CraftersCloud.Core.Entities;
+using CraftersCloud.Core.EntityFramework;
 using JetBrains.Annotations;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

@@ -10,11 +10,11 @@ using CraftersCloud.Blueprint.Infrastructure.Configuration;
 using CraftersCloud.Blueprint.Infrastructure.Data;
 using CraftersCloud.Blueprint.Infrastructure.Identity;
 using CraftersCloud.Blueprint.Infrastructure.Init;
-using Enigmatry.Entry.AspNetCore.Authorization;
-using Enigmatry.Entry.AspNetCore.Exceptions;
-using Enigmatry.Entry.AspNetCore.Security;
-using Enigmatry.Entry.HealthChecks.Extensions;
-using Enigmatry.Entry.SmartEnums.Swagger;
+using CraftersCloud.Core.AspNetCore.Authorization;
+using CraftersCloud.Core.AspNetCore.Exceptions;
+using CraftersCloud.Core.AspNetCore.Security;
+using CraftersCloud.Core.HealthChecks.Extensions;
+using CraftersCloud.Core.SmartEnums.Swagger;
 using Microsoft.IdentityModel.Logging;
 using Serilog;
 
@@ -32,14 +32,14 @@ public static class ProgramExtensions
         services.AppAddSettings(configuration);
         services.AppAddPolly();
         services.AppAddAutoMapper();
-        services.AddEntryHealthChecks(configuration)
+        services.AddCoreHealthChecks(configuration)
             .AddDbContextCheck<AppDbContext>();
         services.AppAddMediatR(AssemblyFinder.ApiAssembly);
         services.AppAddFluentValidation();
-        services.AddEntryHttps(env);
+        services.AddCoreHttps(env);
 
         services.AppAddAuthentication(configuration);
-        services.AddEntryAuthorization<PermissionId>();
+        services.AddCoreAuthorization<PermissionId>();
 
         services.AppAddSwaggerWithAzureAdAuth(configuration, "Enigmatry Blueprint Api", "v1", configureSettings =>
         {
@@ -101,8 +101,8 @@ public static class ProgramExtensions
             IdentityModelEventSource.ShowPII = true;
         }
 
-        app.UseEntryHttps(app.Environment);
-        app.UseEntryExceptionHandler();
+        app.UseCoreHttps(app.Environment);
+        app.UseCoreExceptionHandler();
 
         app.UseAuthentication();
         app.UseAuthorization();
@@ -110,7 +110,7 @@ public static class ProgramExtensions
         app.UseMiddleware<LogContextMiddleware>();
 
         app.MapControllers().RequireAuthorization();
-        app.MapEntryHealthCheck(configuration);
+        app.MapCoreHealthChecks(configuration);
 
         if (env.IsDevelopment())
         {

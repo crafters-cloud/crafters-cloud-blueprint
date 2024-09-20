@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Infrastructure.Authorization;
-using Enigmatry.Entry.AspNetCore.Authorization;
+using CraftersCloud.Core.AspNetCore.Authorization;
 using JetBrains.Annotations;
 
 namespace CraftersCloud.Blueprint.Infrastructure.Autofac.Modules;

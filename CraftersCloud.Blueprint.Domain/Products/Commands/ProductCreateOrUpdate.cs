@@ -1,4 +1,4 @@
-﻿using Enigmatry.Entry.Core.Data;
+﻿using CraftersCloud.Core.Data;
 using FluentValidation;
 using JetBrains.Annotations;
 using MediatR;

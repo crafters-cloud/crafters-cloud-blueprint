@@ -1,5 +1,5 @@
 ﻿using CraftersCloud.Blueprint.Domain.Users;
-using Enigmatry.Entry.SmartEnums.EntityFramework;
+using CraftersCloud.Core.SmartEnums.EntityFramework;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

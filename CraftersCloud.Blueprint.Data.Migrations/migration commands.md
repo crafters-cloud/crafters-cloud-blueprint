@@ -7,25 +7,25 @@ Run these commands from Package Manager Console.
 ### Add migration
 
 ``` powershell
-Add-Migration -Project Enigmatry.Entry.Blueprint.Data.Migrations -StartUpProject Enigmatry.Entry.Blueprint.Data.Migrations -Context AppDbContext -Name MIGRATION_NAME_HERE
+Add-Migration -Project CraftersCloud.Core.Blueprint.Data.Migrations -StartUpProject CraftersCloud.Core.Blueprint.Data.Migrations -Context AppDbContext -Name MIGRATION_NAME_HERE
 ```
 
 ### Update database
 
 ``` powershell
-Update-Database -Project Enigmatry.Entry.Blueprint.Data.Migrations -StartUpProject Enigmatry.Entry.Blueprint.Data.Migrations -Context AppDbContext
+Update-Database -Project CraftersCloud.Core.Blueprint.Data.Migrations -StartUpProject CraftersCloud.Core.Blueprint.Data.Migrations -Context AppDbContext
 ```
 
 ### Remove migration
 
 ``` powershell
-Remove-Migration -Project Enigmatry.Entry.Blueprint.Data.Migrations -StartUpProject Enigmatry.Entry.Blueprint.Data.Migrations
+Remove-Migration -Project CraftersCloud.Core.Blueprint.Data.Migrations -StartUpProject CraftersCloud.Core.Blueprint.Data.Migrations
 ```
 
 ### Revert to a specific migration (discard all migrations created after the specified one)
 
 ``` powershell
-Update-Database -Project Enigmatry.Entry.Blueprint.Data.Migrations -StartUpProject Enigmatry.Entry.Blueprint.Data.Migrations -Context AppDbContext THE-LAST-GOOD-MIGRATION-NAME
+Update-Database -Project CraftersCloud.Core.Blueprint.Data.Migrations -StartUpProject CraftersCloud.Core.Blueprint.Data.Migrations -Context AppDbContext THE-LAST-GOOD-MIGRATION-NAME
 ```
 
 ## Command line commands
@@ -45,23 +45,23 @@ dotnet tool update --global dotnet-ef
 ### Add migration
 
 ``` shell
-dotnet-ef migrations add MIGRATION_NAME_HERE --project Enigmatry.Entry.Blueprint.Data.Migrations --startup-project Enigmatry.Entry.Blueprint.Data.Migrations --context AppDbContext
+dotnet-ef migrations add MIGRATION_NAME_HERE --project CraftersCloud.Core.Blueprint.Data.Migrations --startup-project CraftersCloud.Core.Blueprint.Data.Migrations --context AppDbContext
 ```
 
 ### Update database
 
 ``` shell
-dotnet-ef database update --project Enigmatry.Entry.Blueprint.Data.Migrations --startup-project Enigmatry.Entry.Blueprint.Data.Migrations --context AppDbContext
+dotnet-ef database update --project CraftersCloud.Core.Blueprint.Data.Migrations --startup-project CraftersCloud.Core.Blueprint.Data.Migrations --context AppDbContext
 ```
 
 ### Remove migration
 
 ``` shell
-dotnet-ef migration remove --project Enigmatry.Entry.Blueprint.Data.Migrations --startup-project Enigmatry.Entry.Blueprint.Data.Migrations
+dotnet-ef migration remove --project CraftersCloud.Core.Blueprint.Data.Migrations --startup-project CraftersCloud.Core.Blueprint.Data.Migrations
 ```
 
 ### Revert to a specific migration (discard all migrations created after the specified one)
 
 ``` shell
-dotnet-ef database update --project Enigmatry.Entry.Blueprint.Data.Migrations --startup-project Enigmatry.Entry.Blueprint.Data.Migrations THE-LAST-GOOD-MIGRATION-NAME
+dotnet-ef database update --project CraftersCloud.Core.Blueprint.Data.Migrations --startup-project CraftersCloud.Core.Blueprint.Data.Migrations THE-LAST-GOOD-MIGRATION-NAME
 ```

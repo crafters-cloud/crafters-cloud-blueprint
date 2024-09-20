@@ -1,4 +1,4 @@
-using Enigmatry.Entry.Core.Helpers;
+using CraftersCloud.Core.Helpers;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CraftersCloud.Blueprint.Data.Migrations;

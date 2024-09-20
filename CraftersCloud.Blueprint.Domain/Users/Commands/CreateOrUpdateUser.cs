@@ -1,5 +1,5 @@
-﻿using Enigmatry.Entry.Core.Data;
-using Enigmatry.Entry.Core.Entities;
+﻿using CraftersCloud.Core.Data;
+using CraftersCloud.Core.Entities;
 using FluentValidation;
 using JetBrains.Annotations;
 using MediatR;

@@ -4,7 +4,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Enigmatry.Entry.AspNetCore.Tests.SystemTextJson"/>
+    <PackageReference Include="CraftersCloud.Core.AspNetCore.Tests.SystemTextJson"/>
     <PackageReference Include="Microsoft.NET.Test.Sdk"/>
     <PackageReference Include="MinVer">
       <PrivateAssets>all</PrivateAssets>

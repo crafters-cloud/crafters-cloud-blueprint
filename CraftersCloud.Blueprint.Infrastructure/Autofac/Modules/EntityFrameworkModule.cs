@@ -1,9 +1,10 @@
 ﻿using Autofac;
 using CraftersCloud.Blueprint.Infrastructure.Api.Init;
 using CraftersCloud.Blueprint.Infrastructure.Data;
-using Enigmatry.Entry.Core.Data;
-using Enigmatry.Entry.Core.Settings;
-using Enigmatry.Entry.EntityFramework;
+using CraftersCloud.Core.Data;
+using CraftersCloud.Core.Settings;
+using CraftersCloud.Core.EntityFramework;
+using CraftersCloud.Core.EntityFramework.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
@@ -39,7 +40,7 @@ public class EntityFrameworkModule : Module
 
         // Needs to be registered both as self and as DbContext or the tests might not work as expected
         builder.RegisterType<AppDbContext>().AsSelf().As<DbContext>().InstancePerLifetimeScope();
-        builder.RegisterType<EntityFrameworkUnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+        builder.RegisterType<DbContextUnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
     }
 
     private static bool ImplementsInterface(Type interfaceType, Type concreteType) =>

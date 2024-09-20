@@ -2,7 +2,7 @@
 using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
-using Enigmatry.Entry.Core.Entities;
+using CraftersCloud.Core.Entities;
 
 namespace CraftersCloud.Blueprint.Infrastructure.Tests.Impersonation;
 

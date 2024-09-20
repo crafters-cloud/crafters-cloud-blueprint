@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <PackageReference Include="Enigmatry.Entry.Core"/>
-    <PackageReference Include="Enigmatry.Entry.SmartEnums"/>
+    <PackageReference Include="CraftersCloud.Core"/>
+    <PackageReference Include="CraftersCloud.Core.SmartEnums"/>
     <PackageReference Include="MinVer">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

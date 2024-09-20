@@ -17,7 +17,7 @@ public static class ContainerBuilderStartupExtensions
         {
             Assemblies =
             [
-                AssemblyFinder.Find("Enigmatry.Entry.Infrastructure"),
+                AssemblyFinder.Find("CraftersCloud.Core.Infrastructure"),
                 AssemblyFinder.ApplicationServicesAssembly,
                 AssemblyFinder.InfrastructureAssembly
             ]

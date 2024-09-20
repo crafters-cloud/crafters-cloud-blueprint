@@ -3,9 +3,9 @@ using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
 using CraftersCloud.Blueprint.Infrastructure.Authorization;
-using Enigmatry.Entry.AspNetCore;
-using Enigmatry.Entry.Core.Data;
-using Enigmatry.Entry.Core.Paging;
+using CraftersCloud.Core.AspNetCore;
+using CraftersCloud.Core.Data;
+using CraftersCloud.Core.Paging;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

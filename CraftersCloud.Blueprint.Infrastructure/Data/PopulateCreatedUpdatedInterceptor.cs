@@ -1,7 +1,7 @@
 ﻿using CraftersCloud.Blueprint.Core.Entities;
 using CraftersCloud.Blueprint.Domain.Identity;
-using Enigmatry.Entry.Core;
-using Enigmatry.Entry.Core.Entities;
+using CraftersCloud.Core;
+using CraftersCloud.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 

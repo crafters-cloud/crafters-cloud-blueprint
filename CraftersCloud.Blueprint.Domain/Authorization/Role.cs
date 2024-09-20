@@ -1,5 +1,5 @@
 ﻿using CraftersCloud.Blueprint.Domain.Users;
-using Enigmatry.Entry.Core.Entities;
+using CraftersCloud.Core.Entities;
 
 namespace CraftersCloud.Blueprint.Domain.Authorization;
 

@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using Enigmatry.Entry.Core;
+using CraftersCloud.Core;
 using JetBrains.Annotations;
 
 namespace CraftersCloud.Blueprint.Infrastructure.Tests.Autofac;

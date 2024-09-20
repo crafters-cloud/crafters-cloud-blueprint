@@ -109,9 +109,9 @@
             x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=01413C014EE2184E93CB0CDECC2E24B8/Text/@EntryValue">using AutoMapper;&#xD;
 using AutoMapper.QueryableExtensions;&#xD;
 using $ROOTNAMESPACE$.Domain.$NAME$s;&#xD;
-using Enigmatry.Entry.Core.Data;&#xD;
-using Enigmatry.Entry.Core.EntityFramework;&#xD;
-using Enigmatry.Entry.Core.Paging;&#xD;
+using CraftersCloud.Core.Data;&#xD;
+using CraftersCloud.Core.EntityFramework;&#xD;
+using CraftersCloud.Core.Paging;&#xD;
 using JetBrains.Annotations;&#xD;
 &#xD;
 namespace $NAMESPACE$;&#xD;
@@ -316,8 +316,8 @@ public static class $CLASS$&#xD;
     <s:Int64
             x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=20A6C8FD4283E84DA07148CD65A28702/Section/=52509FF1230C8F4EB70802F20826C6C4/Order/@EntryValue">0</s:Int64>
     <s:String
-            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=20A6C8FD4283E84DA07148CD65A28702/Section/=52509FF1230C8F4EB70802F20826C6C4/SectionPlain/Text/@EntryValue">using Enigmatry.Entry.AspNetCore.Tests.SystemTextJson.Http;&#xD;
-using Enigmatry.Entry.Core.Paging;&#xD;
+            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=20A6C8FD4283E84DA07148CD65A28702/Section/=52509FF1230C8F4EB70802F20826C6C4/SectionPlain/Text/@EntryValue">using CraftersCloud.Core.AspNetCore.Tests.SystemTextJson.Http;&#xD;
+using CraftersCloud.Core.Paging;&#xD;
 using $ROOTNAMESPACE$.Domain.$NAME$s;&#xD;
 using $ROOTNAMESPACE$.Api.Tests.Infrastructure.Api;&#xD;
 using $ROOTNAMESPACE$.Domain.Tests.$NAME$s;&#xD;
@@ -396,9 +396,9 @@ public class $NAME$sControllerFixture : IntegrationFixtureBase&#xD;
 
     <s:String
             x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=20A6C8FD4283E84DA07148CD65A28702/Text/@EntryValue">using System.Net.Mime;&#xD;
-using Enigmatry.Entry.AspNetCore;&#xD;
-using Enigmatry.Entry.Core.Data;&#xD;
-using Enigmatry.Entry.Core.Paging;&#xD;
+using CraftersCloud.Core.AspNetCore;&#xD;
+using CraftersCloud.Core.Data;&#xD;
+using CraftersCloud.Core.Paging;&#xD;
 using $ROOTNAMESPACE$.Domain.$NAME$s;&#xD;
 using MediatR;&#xD;
 using Microsoft.AspNetCore.Mvc;&#xD;
@@ -486,7 +486,7 @@ public class $NAME$sController : Controller&#xD;
     <s:Boolean
             x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=22F136CEDDCCEA47AAD704FF1D173E60/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
     <s:String
-            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=22F136CEDDCCEA47AAD704FF1D173E60/Text/@EntryValue">using Enigmatry.Entry.CodeGeneration.Configuration.List;&#xD;
+            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=22F136CEDDCCEA47AAD704FF1D173E60/Text/@EntryValue">using CraftersCloud.Core.CodeGeneration.Configuration.List;&#xD;
 using JetBrains.Annotations;&#xD;
 &#xD;
 namespace $NAMESPACE$;&#xD;
@@ -669,7 +669,7 @@ public static class $NAME$CreateOrUpdate&#xD;
     <s:Int64
             x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=58980F652F66A74BB39AA2344D94AE07/Section/=35194C86702DD4469B3C678FF27349FB/Order/@EntryValue">1</s:Int64>
     <s:String
-            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=58980F652F66A74BB39AA2344D94AE07/Section/=35194C86702DD4469B3C678FF27349FB/SectionPlain/Text/@EntryValue">using Enigmatry.Entry.Core.Data;&#xD;
+            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=58980F652F66A74BB39AA2344D94AE07/Section/=35194C86702DD4469B3C678FF27349FB/SectionPlain/Text/@EntryValue">using CraftersCloud.Core.Data;&#xD;
 using JetBrains.Annotations;&#xD;
 using MediatR;&#xD;
 &#xD;
@@ -718,7 +718,7 @@ public class $NAME$CreateOrUpdateCommandHandler : IRequestHandler&lt;$NAME$Creat
     <s:Int64
             x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=58980F652F66A74BB39AA2344D94AE07/Section/=5D8FFA5921DD284E8C49D5ABD6A06E4C/Order/@EntryValue">6</s:Int64>
     <s:String
-            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=58980F652F66A74BB39AA2344D94AE07/Section/=5D8FFA5921DD284E8C49D5ABD6A06E4C/SectionPlain/Text/@EntryValue">using Enigmatry.Entry.Core.Entities;&#xD;
+            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=58980F652F66A74BB39AA2344D94AE07/Section/=5D8FFA5921DD284E8C49D5ABD6A06E4C/SectionPlain/Text/@EntryValue">using CraftersCloud.Core.Entities;&#xD;
 using $NAMESPACE$;&#xD;
 using $NAMESPACE$.Commands;&#xD;
 &#xD;
@@ -878,7 +878,7 @@ public class $NAME$QueryableExtensionsFixture&#xD;
 
 
     <s:String
-            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=58980F652F66A74BB39AA2344D94AE07/Text/@EntryValue">using Enigmatry.Entry.Core.Entities;&#xD;
+            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=58980F652F66A74BB39AA2344D94AE07/Text/@EntryValue">using CraftersCloud.Core.Entities;&#xD;
 using $NAMESPACE$.Commands;&#xD;
 using $NAMESPACE$.DomainEvents;&#xD;
 &#xD;
@@ -1148,9 +1148,9 @@ public static class $TypeName$&#xD;
     <s:String
             x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6E290DFAEE6DF24F8AAA75EE9DD26E8F/Text/@EntryValue">using AutoMapper;&#xD;
 using $ROOTNAMESPACE$.Domain.$NAME$s;&#xD;
-using Enigmatry.Entry.Core.Data;&#xD;
-using Enigmatry.Entry.Core.Entities;&#xD;
-using Enigmatry.Entry.Core.EntityFramework;&#xD;
+using CraftersCloud.Core.Data;&#xD;
+using CraftersCloud.Core.Entities;&#xD;
+using CraftersCloud.Core.EntityFramework;&#xD;
 using JetBrains.Annotations;&#xD;
 using MediatR;&#xD;
 &#xD;
@@ -1396,7 +1396,7 @@ public class $EntityName$Fixture : IntegrationFixtureBase&#xD;
     <s:Boolean
             x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FEB6F8FCA144744CBE7AD93520A0FF4A/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
     <s:String
-            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FEB6F8FCA144744CBE7AD93520A0FF4A/Text/@EntryValue">using Enigmatry.Entry.CodeGeneration.Configuration.Form;&#xD;
+            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FEB6F8FCA144744CBE7AD93520A0FF4A/Text/@EntryValue">using CraftersCloud.Core.CodeGeneration.Configuration.Form;&#xD;
 using JetBrains.Annotations;&#xD;
 &#xD;
 namespace $NAMESPACE$;&#xD;

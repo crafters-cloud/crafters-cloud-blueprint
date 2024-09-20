@@ -1,13 +1,14 @@
 ﻿using CraftersCloud.Blueprint.Infrastructure.Api.Init;
-using Enigmatry.Entry.EntityFramework;
-using Enigmatry.Entry.SmartEnums.EntityFramework;
+using CraftersCloud.Core.EntityFramework;
+using CraftersCloud.Core.EntityFramework.Infrastructure;
+using CraftersCloud.Core.SmartEnums.EntityFramework;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 
 namespace CraftersCloud.Blueprint.Infrastructure.Data;
 
 [UsedImplicitly]
-public class AppDbContext(DbContextOptions options) : BaseDbContext(CreateOptions(), options)
+public class AppDbContext(DbContextOptions options) : EntitiesDbContext(CreateOptions(), options)
 {
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder) =>
         configurationBuilder.Properties<string>()

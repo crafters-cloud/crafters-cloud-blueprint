@@ -1,6 +1,6 @@
 ﻿using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Users;
-using Enigmatry.Entry.Core.EntityFramework.Seeding;
+using CraftersCloud.Core.EntityFramework.Seeding;
 using Microsoft.EntityFrameworkCore;
 
 namespace CraftersCloud.Blueprint.Data.Migrations.Seeding;

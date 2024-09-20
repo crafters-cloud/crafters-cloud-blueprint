@@ -1,4 +1,4 @@
-﻿using Enigmatry.Entry.Core.Helpers;
+﻿using CraftersCloud.Core.Helpers;
 
 namespace CraftersCloud.Blueprint.Domain.Users;
 

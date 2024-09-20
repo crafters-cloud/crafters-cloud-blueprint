@@ -57,7 +57,7 @@ public class TestConfigurationBuilder
             var dict = new Dictionary<string, string?>
             {
                 { "ApplicationInsights:ConnectionString", "" },
-                { "Scheduling:Host:quartz.scheduler.instanceName", "Enigmatry.Entry.Scheduler" },
+                { "Scheduling:Host:quartz.scheduler.instanceName", "CraftersCloud.Core.Scheduler" },
                 { "Scheduling:Jobs:CleanOldProductsJob:Cronex", "0 0 0 * * ?" }
             };
 

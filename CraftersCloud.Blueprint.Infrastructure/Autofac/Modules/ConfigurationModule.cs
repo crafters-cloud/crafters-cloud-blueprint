@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using CraftersCloud.Blueprint.Infrastructure.Configuration;
-using Enigmatry.Entry.Core.Settings;
+using CraftersCloud.Core.Settings;
 using JetBrains.Annotations;
 using Microsoft.Extensions.Configuration;
 

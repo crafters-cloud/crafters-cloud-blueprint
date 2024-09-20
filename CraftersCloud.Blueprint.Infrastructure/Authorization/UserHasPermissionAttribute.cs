@@ -1,5 +1,5 @@
 ﻿using CraftersCloud.Blueprint.Domain.Authorization;
-using Enigmatry.Entry.AspNetCore.Authorization.Attributes;
+using CraftersCloud.Core.AspNetCore.Authorization.Attributes;
 
 namespace CraftersCloud.Blueprint.Infrastructure.Authorization;
 

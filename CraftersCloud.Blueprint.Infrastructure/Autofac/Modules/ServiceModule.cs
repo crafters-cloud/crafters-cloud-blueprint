@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Autofac;
 using Module = Autofac.Module;
-using TimeProvider = Enigmatry.Entry.Infrastructure.TimeProvider;
+using TimeProvider = CraftersCloud.Core.Infrastructure.TimeProvider;
 
 namespace CraftersCloud.Blueprint.Infrastructure.Autofac.Modules;
 

@@ -4,20 +4,20 @@
 
 ## Build the nuget package (run in solution root)
 
-``dotnet pack Enigmatry.Entry.Blueprint.Template.csproj -c Release``
+``dotnet pack CraftersCloud.Core.Blueprint.Template.csproj -c Release``
 
 ## Install the template locally from nupkg file
 
-``dotnet new -i "bin\Release\Enigmatry.Entry.Blueprint.Template.3.3.0.nupkg"``
+``dotnet new -i "bin\Release\CraftersCloud.Core.Blueprint.Template.3.3.0.nupkg"``
 
 ## Install the template from NuGet.org
 
-``dotnet new install Enigmatry.Entry.Blueprint.Template``
+``dotnet new install CraftersCloud.Core.Blueprint.Template``
 If you are not authenticated automatically, add the --interactive argument.
 
 ## Install specific version of the template from NuGet.org
 
-``dotnet new install Enigmatry.Entry.Blueprint.Template::VERSION``
+``dotnet new install CraftersCloud.Core.Blueprint.Template::VERSION``
 
 where VERSION should be replaced with the specific version you want to install, e.g. 2.0.1
 
@@ -27,7 +27,7 @@ where VERSION should be replaced with the specific version you want to install, 
 
 ## Uninstall the template (when installed from nupkg)
 
-``dotnet new uninstall Enigmatry.Entry.Blueprint.Template``
+``dotnet new uninstall CraftersCloud.Core.Blueprint.Template``
 
 ## Uninstall the template (when installed from local source)
 

@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using CraftersCloud.Blueprint.Infrastructure.Api.Init;
-using Enigmatry.Entry.MediatR;
+using CraftersCloud.Core.MediatR;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 

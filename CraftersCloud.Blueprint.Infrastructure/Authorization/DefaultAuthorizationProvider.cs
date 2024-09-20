@@ -1,6 +1,6 @@
 ﻿using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Identity;
-using Enigmatry.Entry.AspNetCore.Authorization;
+using CraftersCloud.Core.AspNetCore.Authorization;
 
 namespace CraftersCloud.Blueprint.Infrastructure.Authorization;
 

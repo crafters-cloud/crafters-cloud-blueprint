@@ -5,7 +5,7 @@ using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
 using CraftersCloud.Blueprint.Infrastructure.Tests.Impersonation;
-using Enigmatry.Entry.AspNetCore.Tests.SystemTextJson.Http;
+using CraftersCloud.Core.AspNetCore.Tests.SystemTextJson.Http;
 using FluentAssertions;
 
 namespace CraftersCloud.Blueprint.Api.Tests.CoreFeatures;

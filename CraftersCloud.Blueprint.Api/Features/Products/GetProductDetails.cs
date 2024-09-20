@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using CraftersCloud.Blueprint.Domain.Products;
-using Enigmatry.Entry.Core.Data;
-using Enigmatry.Entry.Core.Entities;
-using Enigmatry.Entry.Core.EntityFramework;
+using CraftersCloud.Core.Data;
+using CraftersCloud.Core.Entities;
+using CraftersCloud.Core.EntityFramework;
 using JetBrains.Annotations;
 using MediatR;
 

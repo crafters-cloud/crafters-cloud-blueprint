@@ -1,5 +1,5 @@
 ﻿using System.Net.Mime;
-using Enigmatry.Entry.AspNetCore;
+using CraftersCloud.Core.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

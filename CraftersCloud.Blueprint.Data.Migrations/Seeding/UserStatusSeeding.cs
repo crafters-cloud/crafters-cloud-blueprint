@@ -1,5 +1,5 @@
 ﻿using CraftersCloud.Blueprint.Domain.Users;
-using Enigmatry.Entry.SmartEnums.EntityFramework.Seeding;
+using CraftersCloud.Core.SmartEnums.EntityFramework.Seeding;
 
 namespace CraftersCloud.Blueprint.Data.Migrations.Seeding;
 

@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Identity.Web;
 using NSwag.Generation.AspNetCore;
 
-namespace CraftersCloud.Blueprint.Infrastructure.Api.Security;
+namespace Enigmatry.Entry.Blueprint.Infrastructure.Api.Security;
 
 public static class SwaggerAuthenticationStartupExtensions
 {

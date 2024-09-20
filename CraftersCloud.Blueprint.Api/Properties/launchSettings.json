@@ -27,7 +27,7 @@
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
       }
     },
-    "Enigmatry.Entry.Blueprint.Api": {
+    "CraftersCloud.Core.Blueprint.Api": {
       "commandName": "Project",
       "launchBrowser": false,
       "applicationUrl": "http://localhost:5441/",

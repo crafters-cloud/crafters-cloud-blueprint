@@ -1,4 +1,4 @@
-﻿using Enigmatry.Entry.AspNetCore.Tests.Utilities.Database;
+﻿using CraftersCloud.Core.AspNetCore.Tests.Utilities.Database;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;

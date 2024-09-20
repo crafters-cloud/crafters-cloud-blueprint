@@ -9,9 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Enigmatry.Entry.AspNetCore.Authorization"/>
-    <PackageReference Include="Enigmatry.Entry.HealthChecks"/>
-    <PackageReference Include="Enigmatry.Entry.CodeGeneration.Validation"/>
+    <PackageReference Include="CraftersCloud.Core.AspNetCore"/>
+    <PackageReference Include="CraftersCloud.Core.HealthChecks"/>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore"/>
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy"/>
     <PackageReference Include="MinVer">

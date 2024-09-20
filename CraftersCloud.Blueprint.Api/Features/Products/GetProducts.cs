@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using CraftersCloud.Blueprint.Domain.Products;
-using Enigmatry.Entry.Core.Data;
-using Enigmatry.Entry.Core.EntityFramework;
-using Enigmatry.Entry.Core.Paging;
+using CraftersCloud.Core.Data;
+using CraftersCloud.Core.EntityFramework;
+using CraftersCloud.Core.Paging;
 using JetBrains.Annotations;
 
 namespace CraftersCloud.Blueprint.Api.Features.Products;

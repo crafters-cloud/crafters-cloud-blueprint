@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Argon;
 using CraftersCloud.Blueprint.Infrastructure.Api.Init;
-using Enigmatry.Entry.SmartEnums.VerifyTests;
+using CraftersCloud.Core.SmartEnums.VerifyTests;
 
 namespace CraftersCloud.Blueprint.Common.Tests;
 

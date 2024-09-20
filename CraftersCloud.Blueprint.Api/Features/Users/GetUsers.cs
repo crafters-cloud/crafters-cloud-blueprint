@@ -2,9 +2,9 @@
 using AutoMapper.QueryableExtensions;
 using CraftersCloud.Blueprint.Domain.Identity;
 using CraftersCloud.Blueprint.Domain.Users;
-using Enigmatry.Entry.Core.Data;
-using Enigmatry.Entry.Core.EntityFramework;
-using Enigmatry.Entry.Core.Paging;
+using CraftersCloud.Core.Data;
+using CraftersCloud.Core.EntityFramework;
+using CraftersCloud.Core.Paging;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 
