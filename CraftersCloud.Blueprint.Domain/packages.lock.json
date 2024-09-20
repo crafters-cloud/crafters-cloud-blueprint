@@ -4,9 +4,9 @@
     "net8.0": {
       "CraftersCloud.Core": {
         "type": "Direct",
-        "requested": "[1.0.3, )",
-        "resolved": "1.0.3",
-        "contentHash": "zsreQNeyinmrYLdeccoXpDqfbJZZAVyeFU45xQN7MFM/z+rBc6NDqDg/1Ojo2tvf94pDQ0YeUKlYIWOw5o6OFQ==",
+        "requested": "[1.0.5, )",
+        "resolved": "1.0.5",
+        "contentHash": "1vLLNBDuR5s60kFmON3je+/J2PO7dTMCgbGN3huSXNmi7m2lDi1hb5iTNXiU/NpE1/fVOTiEd76IppxQjz/YrQ==",
         "dependencies": {
           "JetBrains.Annotations": "2024.2.0",
           "MediatR": "12.4.1",
@@ -17,12 +17,12 @@
       },
       "CraftersCloud.Core.EntityFramework": {
         "type": "Direct",
-        "requested": "[1.0.3, )",
-        "resolved": "1.0.3",
-        "contentHash": "r9e9IDQMQdDOBVwAE5wEjVAY2N7kg0gKUqdFCHJ9cvN0UwGkzIsMnO/gq1TklQQazF2+5lXkzIUBsc7dB+t+Gw==",
+        "requested": "[1.0.5, )",
+        "resolved": "1.0.5",
+        "contentHash": "GhdveNnBXURIEyvQC5kzW8bfXedQXop4c61eTA4FtVE/SqDAeh3GJpqZNiJ+htFYM/LIahGnkAanNlp2p5Ax+w==",
         "dependencies": {
           "AutoMapper": "13.0.1",
-          "CraftersCloud.Core": "1.0.3",
+          "CraftersCloud.Core": "1.0.5",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "System.Linq.Dynamic.Core": "1.4.5"
         }
@@ -143,8 +143,8 @@
       "crafterscloud.blueprint.core": {
         "type": "Project",
         "dependencies": {
-          "CraftersCloud.Core": "[1.0.3, )",
-          "CraftersCloud.Core.SmartEnums": "[1.0.3, )"
+          "CraftersCloud.Core": "[1.0.5, )",
+          "CraftersCloud.Core.SmartEnums": "[1.0.5, )"
         }
       },
       "AutoMapper": {
@@ -158,12 +158,12 @@
       },
       "CraftersCloud.Core.SmartEnums": {
         "type": "CentralTransitive",
-        "requested": "[1.0.3, )",
-        "resolved": "1.0.3",
-        "contentHash": "DBH4hdJtlKI+zJqWp6XNgyPtZDoKoIpIuTNYJPmGWN8yWjkT7klll3S2aFljBr9LQfORDtxfga5Qh1ipVuKvGA==",
+        "requested": "[1.0.5, )",
+        "resolved": "1.0.5",
+        "contentHash": "UFDWk8lOvlpaRUsVu2SZ4JqhkFtDFDT80RmDbjmRdpFjD6pZxkMtPoce59rQCbW2wqRfzfzWJeXMOjYZKCiZWQ==",
         "dependencies": {
           "Ardalis.SmartEnum": "8.0.0",
-          "CraftersCloud.Core": "1.0.3",
+          "CraftersCloud.Core": "1.0.5",
           "JetBrains.Annotations": "2024.2.0"
         }
       },

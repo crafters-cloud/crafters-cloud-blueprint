@@ -43,7 +43,7 @@ public static class ProgramExtensions
 
         services.AppAddSwaggerWithAzureAdAuth(configuration, "Enigmatry Blueprint Api", "v1", configureSettings =>
         {
-            configureSettings.EntryConfigureSmartEnums();
+            configureSettings.CoreConfigureSmartEnums();
         });
         services.AppAddMvc();
     }
@@ -101,7 +101,7 @@ public static class ProgramExtensions
             IdentityModelEventSource.ShowPII = true;
         }
 
-        app.UseCoreHttps(app.Environment);
+        app.UsyCoreHttps(app.Environment);
         app.UseCoreExceptionHandler();
 
         app.UseAuthentication();

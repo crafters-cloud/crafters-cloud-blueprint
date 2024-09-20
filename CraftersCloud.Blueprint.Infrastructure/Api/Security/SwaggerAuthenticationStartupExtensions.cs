@@ -1,18 +1,19 @@
-﻿using Enigmatry.Entry.Swagger;
+﻿using CraftersCloud.Blueprint.Infrastructure.Api.Security;
+using CraftersCloud.Core.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Identity.Web;
 using NSwag.Generation.AspNetCore;
 
-namespace Enigmatry.Entry.Blueprint.Infrastructure.Api.Security;
+namespace CraftersCloud.Blueprint.Infrastructure.Api.Security;
 
 public static class SwaggerAuthenticationStartupExtensions
 {
     public static void AppUseSwaggerWithAzureAdAuth(this IApplicationBuilder app, IConfiguration configuration)
     {
         var aadOptions = configuration.GetSection(AuthenticationStartupExtensions.AzureAdSection).Get<MicrosoftIdentityOptions>()!;
-        app.UseEntrySwaggerWithOAuth2Client(aadOptions.ClientId!, path: "/api");
+        app.UseCoreSwaggerWithOAuth2Client(aadOptions.ClientId!, path: "/api");
     }
 
     public static void AppAddSwaggerWithAzureAdAuth(this IServiceCollection services,
@@ -31,7 +32,7 @@ public static class SwaggerAuthenticationStartupExtensions
 
         var scopesDictionary = aadOptions.Scope.ToDictionary(scope => scope, _ => "");
 
-        services.AddEntrySwaggerWithAuthorizationCode(
+        services.AddCoreSwaggerWithAuthorizationCode(
             appTitle,
             $"{authorityUrl}/oauth2/v2.0/authorize",
             $"{authorityUrl}/oauth2/v2.0/token",
