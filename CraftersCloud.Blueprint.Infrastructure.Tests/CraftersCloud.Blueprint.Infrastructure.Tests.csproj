@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="CraftersCloud.Blueprint.Api.Tests"/>
-    <InternalsVisibleTo Include="Enigmatry.Entry.Blueprint.Scheduler.Tests"/>
   </ItemGroup>
 
 </Project>
