@@ -1,29 +1,26 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "Enigmatry",
+  "author": "CraftersCloud",
   "classifications": [
-    "Entry",
     "Blueprint",
     ".netcore",
-    "Angular",
-    "web"
+    "api"
   ],
-  "name": "Enigmatry Entry Blueprint Project",
+  "name": "Crafters Cloud Blueprint Project",
   "generatorVersions": "[1.0.0.0-*)",
-  "groupIdentity": "Enigmatry.Entry.Blueprint.Template",
+  "groupIdentity": "CraftersCloud.Blueprint.Template",
   "precedence": "100",
-  "identity": "Enigmatry.Entry.Blueprint.Template",
+  "identity": "CraftersCloud.Blueprint.Template",
   "shortName": "blueprint",
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "Enigmatry.Entry.Blueprint",
+  "sourceName": "CraftersCloud.Blueprint",
   "sources": [
     {
       "exclude": [
-        "**/Enigmatry.Entry.Blueprint.Template.csproj",
-        "**/.angular/**",
+        "**/CraftersCloud.Blueprint.Template.csproj",
         "**/.template.config/**",
         "**/.idea/**",
         "**/bin/**",
@@ -43,14 +40,14 @@
   "symbols": {
     "projectName": {
       "type": "parameter",
-      "replaces": "Enigmatry.Entry.Blueprint",
-      "FileRename": "Enigmatry.Entry.Blueprint"
+      "replaces": "CraftersCloud.Blueprint",
+      "FileRename": "CraftersCloud.Blueprint"
     },
     "appProjectName": {
       "type": "parameter",
-      "replaces": "enigmatry-entry-blueprint",
-      "FileRename": "enigmatry-entry-blueprint",
-      "description": "the kebab-cased name (i.e. enigmatry-entry-blueprint)"
+      "replaces": "crafters-cloud-blueprint",
+      "FileRename": "crafters-cloud-blueprint",
+      "description": "the kebab-cased name (i.e. crafters-cloud-blueprint)"
     },
     "appProjectNameUpper": {
       "type": "generated",
@@ -59,18 +56,18 @@
         "source": "appProjectName",
         "toLower": true
       },
-      "FileRename": "Enigmatry-Entry-Blueprint"
+      "FileRename": "Crafters-Cloud-Blueprint"
     },
     "projectNameNoDots": {
       "type": "derived",
       "valueSource": "projectName",
       "valueTransform": "ValueWithoutDots",
-      "replaces": "EnigmatryEntryBlueprint",
+      "replaces": "CraftersCloudBlueprint",
       "description": "A value derived from the 'projectName' param without dots"
     },
     "friendlyName": {
       "type": "parameter",
-      "replaces": "Enigmatry Blueprint"
+      "replaces": "CraftersCloud Blueprint"
     },
     "skipRestore": {
       "type": "parameter",
@@ -130,7 +127,7 @@
   ],
   "primaryOutputs": [
     {
-      "path": "Enigmatry.Entry.Blueprint.sln"
+      "path": "CraftersCloud.Blueprint.sln"
     }
   ],
   "postActions": [

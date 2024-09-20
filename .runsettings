@@ -2,7 +2,7 @@
 <RunSettings>
   <RunConfiguration>
     <EnvironmentVariables>
-      <IntegrationTestsConnectionString>Server=.;Database=enigmatry-entry-blueprint-integration-testing;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True</IntegrationTestsConnectionString>
+      <IntegrationTestsConnectionString>Server=.;Database=crafters-cloud-blueprint-integration-testing;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True</IntegrationTestsConnectionString>
     </EnvironmentVariables>
   </RunConfiguration>
 </RunSettings>

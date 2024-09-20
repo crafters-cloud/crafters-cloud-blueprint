@@ -2,7 +2,7 @@
 using Enigmatry.Entry.Core;
 using JetBrains.Annotations;
 
-namespace Enigmatry.Entry.Blueprint.Infrastructure.Tests.Autofac;
+namespace CraftersCloud.Blueprint.Infrastructure.Tests.Autofac;
 
 [UsedImplicitly]
 public class TestModule : Module

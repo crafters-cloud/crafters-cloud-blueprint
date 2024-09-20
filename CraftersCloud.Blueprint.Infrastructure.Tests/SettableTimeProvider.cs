@@ -1,6 +1,6 @@
 ﻿using Enigmatry.Entry.Core;
 
-namespace Enigmatry.Entry.Blueprint.Infrastructure.Tests;
+namespace CraftersCloud.Blueprint.Infrastructure.Tests;
 
 public class SettableTimeProvider : ITimeProvider
 {

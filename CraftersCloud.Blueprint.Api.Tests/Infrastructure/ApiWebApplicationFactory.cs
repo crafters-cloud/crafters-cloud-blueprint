@@ -1,9 +1,9 @@
 ﻿using Autofac;
 using CraftersCloud.Blueprint.Infrastructure.Autofac.Modules;
 using CraftersCloud.Blueprint.Infrastructure.Configuration;
-using Enigmatry.Entry.Blueprint.Infrastructure.Tests;
-using Enigmatry.Entry.Blueprint.Infrastructure.Tests.Autofac;
-using Enigmatry.Entry.Blueprint.Infrastructure.Tests.Impersonation;
+using CraftersCloud.Blueprint.Infrastructure.Tests;
+using CraftersCloud.Blueprint.Infrastructure.Tests.Autofac;
+using CraftersCloud.Blueprint.Infrastructure.Tests.Impersonation;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;

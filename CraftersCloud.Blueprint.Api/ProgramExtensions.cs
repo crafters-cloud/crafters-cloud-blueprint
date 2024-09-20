@@ -9,6 +9,7 @@ using CraftersCloud.Blueprint.Infrastructure.Autofac.Modules;
 using CraftersCloud.Blueprint.Infrastructure.Configuration;
 using CraftersCloud.Blueprint.Infrastructure.Data;
 using CraftersCloud.Blueprint.Infrastructure.Identity;
+using CraftersCloud.Blueprint.Infrastructure.Init;
 using Enigmatry.Entry.AspNetCore.Authorization;
 using Enigmatry.Entry.AspNetCore.Exceptions;
 using Enigmatry.Entry.AspNetCore.Security;

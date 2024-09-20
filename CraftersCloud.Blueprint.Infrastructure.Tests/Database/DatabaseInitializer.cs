@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Respawn;
 using Respawn.Graph;
 
-namespace Enigmatry.Entry.Blueprint.Infrastructure.Tests.Database;
+namespace CraftersCloud.Blueprint.Infrastructure.Tests.Database;
 
 internal static class DatabaseInitializer
 {

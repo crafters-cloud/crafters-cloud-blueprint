@@ -4,7 +4,7 @@ using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
 using Enigmatry.Entry.Core.Entities;
 
-namespace Enigmatry.Entry.Blueprint.Infrastructure.Tests.Impersonation;
+namespace CraftersCloud.Blueprint.Infrastructure.Tests.Impersonation;
 
 public static class TestUserData
 {

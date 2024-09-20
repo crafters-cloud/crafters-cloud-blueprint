@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace Enigmatry.Entry.Blueprint.Infrastructure.Tests.Configuration;
+namespace CraftersCloud.Blueprint.Infrastructure.Tests.Configuration;
 
 public class TestConfigurationBuilder
 {

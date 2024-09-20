@@ -1,11 +1,11 @@
 ﻿using CraftersCloud.Blueprint.Infrastructure.Api.Init;
 using CraftersCloud.Blueprint.Infrastructure.Data;
+using CraftersCloud.Blueprint.Infrastructure.Tests;
+using CraftersCloud.Blueprint.Infrastructure.Tests.Configuration;
+using CraftersCloud.Blueprint.Infrastructure.Tests.Database;
+using CraftersCloud.Blueprint.Infrastructure.Tests.Impersonation;
 using Enigmatry.Entry.AspNetCore.Tests.SystemTextJson.Http;
 using Enigmatry.Entry.AspNetCore.Tests.Utilities;
-using Enigmatry.Entry.Blueprint.Infrastructure.Tests;
-using Enigmatry.Entry.Blueprint.Infrastructure.Tests.Configuration;
-using Enigmatry.Entry.Blueprint.Infrastructure.Tests.Database;
-using Enigmatry.Entry.Blueprint.Infrastructure.Tests.Impersonation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

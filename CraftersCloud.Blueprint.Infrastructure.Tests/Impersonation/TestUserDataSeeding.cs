@@ -1,7 +1,7 @@
 ﻿using CraftersCloud.Blueprint.Domain.Users;
 using Microsoft.EntityFrameworkCore;
 
-namespace Enigmatry.Entry.Blueprint.Infrastructure.Tests.Impersonation;
+namespace CraftersCloud.Blueprint.Infrastructure.Tests.Impersonation;
 
 public class TestUserDataSeeding(DbContext context)
 {

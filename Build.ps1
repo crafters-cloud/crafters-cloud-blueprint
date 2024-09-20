@@ -30,22 +30,13 @@ if (Test-Path $artifacts)
     Remove-Item $artifacts -Force -Recurse
 }
 
-exec { & dotnet clean -c Release }
+exec { & dotnet clean -c Release CraftersCloud.Blueprint.sln }
 
-exec { & dotnet build -c Release }
+exec { & dotnet build -c Release CraftersCloud.Blueprint.sln }
 
-exec { & dotnet test -c Release --no-build -l trx --verbosity=normal }
+exec { & dotnet test -c Release CraftersCloud.Blueprint.sln --no-build -l trx --verbosity=normal }
 
-exec { & dotnet pack .\src\CraftersCloud.Core\CraftersCloud.Core.csproj -c Release -o $artifacts --no-build }
-exec { & dotnet pack .\src\CraftersCloud.Core.AspNetCore\CraftersCloud.Core.AspNetCore.csproj -c Release -o $artifacts --no-build }
-exec { & dotnet pack .\src\CraftersCloud.Core.EntityFramework\CraftersCloud.Core.EntityFramework.csproj -c Release -o $artifacts --no-build }
-exec { & dotnet pack .\src\CraftersCloud.Core.EntityFramework.Infrastructure\CraftersCloud.Core.EntityFramework.Infrastructure.csproj -c Release -o $artifacts --no-build }
-exec { & dotnet pack .\src\CraftersCloud.Core.EventBus\CraftersCloud.Core.EventBus.csproj -c Release -o $artifacts --no-build }
-exec { & dotnet pack .\src\CraftersCloud.Core.HealthChecks\CraftersCloud.Core.HealthChecks.csproj -c Release -o $artifacts --no-build }
-exec { & dotnet pack .\src\CraftersCloud.Core.Infrastructure\CraftersCloud.Core.Infrastructure.csproj -c Release -o $artifacts --no-build }
-exec { & dotnet pack .\src\CraftersCloud.Core.MediatR\CraftersCloud.Core.MediatR.csproj -c Release -o $artifacts --no-build }
-exec { & dotnet pack .\src\CraftersCloud.Core.Swagger\CraftersCloud.Core.Swagger.csproj -c Release -o $artifacts --no-build }
-exec { & dotnet pack .\src\CraftersCloud.Core.TestUtils\CraftersCloud.Core.TestUtils.csproj -c Release -o $artifacts --no-build }
+exec { & dotnet pack .\src\CraftersCloud.Core\dotnet pack .\CraftersCloud.Blueprint.Template\CraftersCloud.Blueprint.Template.Template.csproj -c Release -o $artifacts --no-build }
 
 
 

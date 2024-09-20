@@ -4,7 +4,7 @@ namespace CraftersCloud.Blueprint.Infrastructure.Api.Init;
 
 public static class AssemblyFinder
 {
-    private const string ProjectPrefix = "Enigmatry.Entry.Blueprint";
+    private const string ProjectPrefix = "CraftersCloud.Blueprint";
     public static Assembly ApplicationServicesAssembly => FindAssembly("ApplicationServices");
     public static Assembly ApiAssembly => FindAssembly("Api");
     public static Assembly DomainAssembly => FindAssembly("Domain");

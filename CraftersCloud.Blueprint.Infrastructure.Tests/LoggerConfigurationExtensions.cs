@@ -2,7 +2,7 @@ using System.Globalization;
 using Serilog;
 using Serilog.Events;
 
-namespace Enigmatry.Entry.Blueprint.Infrastructure.Tests;
+namespace CraftersCloud.Blueprint.Infrastructure.Tests;
 
 public static class LoggerConfigurationExtensions
 {

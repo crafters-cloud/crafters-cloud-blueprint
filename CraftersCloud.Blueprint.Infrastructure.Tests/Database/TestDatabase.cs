@@ -4,7 +4,7 @@ using CraftersCloud.Blueprint.Infrastructure.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 using Testcontainers.MsSql;
 
-namespace Enigmatry.Entry.Blueprint.Infrastructure.Tests.Database;
+namespace CraftersCloud.Blueprint.Infrastructure.Tests.Database;
 
 internal class TestDatabase
 {

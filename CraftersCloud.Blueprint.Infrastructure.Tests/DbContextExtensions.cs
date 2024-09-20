@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Enigmatry.Entry.Blueprint.Infrastructure.Tests;
+namespace CraftersCloud.Blueprint.Infrastructure.Tests;
 
 public static class DbContextExtensions
 {

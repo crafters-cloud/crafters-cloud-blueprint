@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Enigmatry.Entry.Blueprint.ApplicationServices.Auditing;
+namespace CraftersCloud.Blueprint.ApplicationServices.Auditing;
 
 [UsedImplicitly]
 public class AuditableDomainEventNotificationHandler<T>(

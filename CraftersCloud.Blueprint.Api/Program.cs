@@ -1,8 +1,9 @@
-﻿using CraftersCloud.Blueprint.Api;
-using CraftersCloud.Blueprint.Infrastructure.Api.Init;
+﻿using CraftersCloud.Blueprint.Infrastructure.Api.Init;
 using CraftersCloud.Blueprint.Infrastructure.Configuration;
 using CraftersCloud.Blueprint.Infrastructure.Init;
 using Serilog;
+
+namespace CraftersCloud.Blueprint.Api;
 
 internal class Program
 {
