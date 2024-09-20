@@ -1,0 +1,12 @@
+﻿{
+  Id: Guid_1,
+  FullName: INTEGRATION_TEST,
+  EmailAddress: test_user@xyz.com,
+  Permissions: [
+    UsersRead,
+    UsersWrite,
+    ProductsRead,
+    ProductsWrite,
+    ProductsDelete
+  ]
+}

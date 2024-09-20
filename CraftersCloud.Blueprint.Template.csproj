@@ -1,0 +1,515 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Authors>Crafters Cloud</Authors>
+    <Copyright>Copyright © 2024 Crafters Cloud.</Copyright>
+    <Company>Crafters Cloud</Company>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <Description>Template to use when creating an asp.net core Api application.</Description>
+    <EmbedUntrackedSources>false</EmbedUntrackedSources>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageIcon>icon-192x192.png</PackageIcon>
+    <PackageId>CraftersCloud.Blueprint.Template</PackageId>
+    <PackageProjectUrl>https://https://github.com/crafters-cloud/crafters-cloud-blueprint</PackageProjectUrl>
+    <PackageTags>CraftersCloud;Blueprint;dotnet-new;template</PackageTags>
+    <PackageType>Template</PackageType>
+    <PackageVersion>3.3</PackageVersion>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/crafters-cloud/crafters-cloud-blueprint</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <Title>Crafters Cloud Blueprint Template</Title>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="**\*"/>
+    <Content Include="**\*"
+             Exclude="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user;build-publish-nuget.yml"/>
+    <EmbeddedResource
+      Remove="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user"/>
+    <None
+      Remove="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user"/>
+    <Content Update="CraftersCloud.Blueprint.Api\Connected Services\Key Vault\ConnectedService.json">
+      <Link>CraftersCloud.Blueprint.Api\Connected Services\Key Vault\ConnectedService.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Authorization\GetUserProfile.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Authorization\GetUserProfile.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Authorization\ProfileController.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Authorization\ProfileController.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Products\GetProductDetails.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Products\GetProductDetails.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Products\GetProducts.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Products\GetProducts.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Products\IsProductCodeUnique.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Products\IsProductCodeUnique.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Products\IsProductNameUnique.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Products\IsProductNameUnique.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Products\ProductsController.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Products\ProductsController.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Users\GetRoleLookup.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Users\GetRoleLookup.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Users\GetStatusesLookup.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Users\GetStatusesLookup.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Users\GetUserDetails.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Users\GetUserDetails.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Users\GetUsers.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Users\GetUsers.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Users\UsersController.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Users\UsersController.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Validations\ProductEditComponentValidationConfiguration.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Validations\ProductEditComponentValidationConfiguration.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\Validations\UserEditComponentValidationConfiguration.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\Validations\UserEditComponentValidationConfiguration.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\LookupRequest.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\LookupRequest.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Features\LookupResponse.cs">
+      <Link>CraftersCloud.Blueprint.Api\Features\LookupResponse.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Properties\launchSettings.json">
+      <Link>CraftersCloud.Blueprint.Api\Properties\launchSettings.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\appsettings.Development.json">
+      <Link>CraftersCloud.Blueprint.Api\appsettings.Development.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\appsettings.json">
+      <Link>CraftersCloud.Blueprint.Api\appsettings.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\AssemblyInfo.cs">
+      <Link>CraftersCloud.Blueprint.Api\AssemblyInfo.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\packages.lock.json">
+      <Link>CraftersCloud.Blueprint.Api\packages.lock.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\parameters.xml">
+      <Link>CraftersCloud.Blueprint.Api\parameters.xml</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\Program.cs">
+      <Link>CraftersCloud.Blueprint.Api\Program.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\ProgramExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Api\ProgramExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\web.config">
+      <Link>CraftersCloud.Blueprint.Api\web.config</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api\web.Release.config">
+      <Link>CraftersCloud.Blueprint.Api\web.Release.config</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\CoreFeatures\ApiSetupFixture.cs">
+      <Link>CraftersCloud.Blueprint.Api.Tests\CoreFeatures\ApiSetupFixture.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\CoreFeatures\ApiSetupFixture.GivenValidUserId_GetById_ReturnsUserDetails.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\CoreFeatures\ApiSetupFixture.GivenValidUserId_GetById_ReturnsUserDetails.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\CoreFeatures\ApiSetupFixture.TestCreate.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\CoreFeatures\ApiSetupFixture.TestCreate.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\CoreFeatures\ApiSetupFixture.TestGetAll.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\CoreFeatures\ApiSetupFixture.TestGetAll.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\CoreFeatures\ApiSetupFixture.TestUpdate.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\CoreFeatures\ApiSetupFixture.TestUpdate.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\CoreFeatures\AuthorizationFixture.cs">
+      <Link>CraftersCloud.Blueprint.Api.Tests\CoreFeatures\AuthorizationFixture.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\CoreFeatures\UnauthenticatedAccessFixture.cs">
+      <Link>CraftersCloud.Blueprint.Api.Tests\CoreFeatures\UnauthenticatedAccessFixture.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Features\ProfileControllerFixture.cs">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Features\ProfileControllerFixture.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Features\ProfileControllerFixture.TestGetProfileDetails.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Features\ProfileControllerFixture.TestGetProfileDetails.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.cs">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestCreate.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestCreate.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestGetAll.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestGetAll.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestGetById.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestGetById.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestGetRoles.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestGetRoles.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestGetStatuses.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestGetStatuses.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestUpdate.verified.txt">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Features\UsersControllerFixture.TestUpdate.verified.txt</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Infrastructure\Api\IntegrationFixtureBase.cs">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Infrastructure\Api\IntegrationFixtureBase.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\Infrastructure\ApiWebApplicationFactory.cs">
+      <Link>CraftersCloud.Blueprint.Api.Tests\Infrastructure\ApiWebApplicationFactory.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\packages.lock.json">
+      <Link>CraftersCloud.Blueprint.Api.Tests\packages.lock.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Api.Tests\VerifierSettingsInitializer.cs">
+      <Link>CraftersCloud.Blueprint.Api.Tests\VerifierSettingsInitializer.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.ApplicationServices\Auditing\AuditableDomainEventHandler.cs">
+      <Link>CraftersCloud.Blueprint.ApplicationServices\Auditing\AuditableDomainEventHandler.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.ApplicationServices\packages.lock.json">
+      <Link>CraftersCloud.Blueprint.ApplicationServices\packages.lock.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Common.Tests\CommonVerifierSettingsInitializer.cs">
+      <Link>CraftersCloud.Blueprint.Common.Tests\CommonVerifierSettingsInitializer.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Common.Tests\packages.lock.json">
+      <Link>CraftersCloud.Blueprint.Common.Tests\packages.lock.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Core\Entities\EntityWithCreatedUpdated.cs">
+      <Link>CraftersCloud.Blueprint.Core\Entities\EntityWithCreatedUpdated.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Core\Entities\IEntityWithCreatedUpdated.cs">
+      <Link>CraftersCloud.Blueprint.Core\Entities\IEntityWithCreatedUpdated.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Core\Settings\AppSettings.cs">
+      <Link>CraftersCloud.Blueprint.Core\Settings\AppSettings.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Core\Settings\KeyVaultSettings.cs">
+      <Link>CraftersCloud.Blueprint.Core\Settings\KeyVaultSettings.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Core\packages.lock.json">
+      <Link>CraftersCloud.Blueprint.Core\packages.lock.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\Migrations\20240325193915_Initial.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\Migrations\20240325193915_Initial.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\Migrations\20240329162818_SeedSystemUser.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\Migrations\20240329162818_SeedSystemUser.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\Migrations\20240401141414_ProductStatus.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\Migrations\20240401141414_ProductStatus.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\Migrations\20240819135357_AddUserStatus.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\Migrations\20240819135357_AddUserStatus.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\Migrations\20240821140737_AlterUser.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\Migrations\20240821140737_AlterUser.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\Migrations\AppDbContextModelSnapshot.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\Migrations\AppDbContextModelSnapshot.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\Scripts\SeedTestData.sql">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\Scripts\SeedTestData.sql</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\Seeding\RolePermissionSeeding.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\Seeding\RolePermissionSeeding.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\Seeding\UserSeeding.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\Seeding\UserSeeding.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\Seeding\UserStatusSeeding.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\Seeding\UserStatusSeeding.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\AppDesignTimeDbContextFactory.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\AppDesignTimeDbContextFactory.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\DbInitializer.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\DbInitializer.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\DevelopmentConnectionsStrings.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\DevelopmentConnectionsStrings.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\migration commands.md">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\migration commands.md</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\MigrationBuilderExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\MigrationBuilderExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Data.Migrations\packages.lock.json">
+      <Link>CraftersCloud.Blueprint.Data.Migrations\packages.lock.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Auditing\AuditableDomainEvent.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Auditing\AuditableDomainEvent.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Authorization\Permission.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Authorization\Permission.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Authorization\PermissionId.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Authorization\PermissionId.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Authorization\Role.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Authorization\Role.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Identity\ICurrentUserProvider.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Identity\ICurrentUserProvider.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Identity\PermissionsContext.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Identity\PermissionsContext.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Identity\UserContext.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Identity\UserContext.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Identity\UserQueryableExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Identity\UserQueryableExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Products\Commands\ProductCreateOrUpdate.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Products\Commands\ProductCreateOrUpdate.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Products\Commands\ProductCreateOrUpdateCommandHanlder.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Products\Commands\ProductCreateOrUpdateCommandHanlder.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Products\Commands\RemoveProduct.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Products\Commands\RemoveProduct.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Products\DomainEvents\ProductCreatedDomainEvent.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Products\DomainEvents\ProductCreatedDomainEvent.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Products\DomainEvents\ProductUpdatedDomainEvent.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Products\DomainEvents\ProductUpdatedDomainEvent.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Products\Product.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Products\Product.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Products\ProductQueryableExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Products\ProductQueryableExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Products\ProductStatus.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Products\ProductStatus.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Products\ProductType.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Products\ProductType.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Users\Commands\CreateOrUpdateUser.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Users\Commands\CreateOrUpdateUser.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Users\Commands\CreateOrUpdateUserCommandHandler.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Users\Commands\CreateOrUpdateUserCommandHandler.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Users\DomainEvents\UserCreatedDomainEvent.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Users\DomainEvents\UserCreatedDomainEvent.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Users\DomainEvents\UserUpdatedDomainEvent.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Users\DomainEvents\UserUpdatedDomainEvent.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Users\User.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Users\User.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Users\UserQueryableExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Users\UserQueryableExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Users\UserStatus.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Users\UserStatus.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\Users\UserStatusId.cs">
+      <Link>CraftersCloud.Blueprint.Domain\Users\UserStatusId.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain\packages.lock.json">
+      <Link>CraftersCloud.Blueprint.Domain\packages.lock.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain.Tests\Users\UserBuilder.cs">
+      <Link>CraftersCloud.Blueprint.Domain.Tests\Users\UserBuilder.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain.Tests\Users\UserQueryableExtensionsFixture.cs">
+      <Link>CraftersCloud.Blueprint.Domain.Tests\Users\UserQueryableExtensionsFixture.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Domain.Tests\packages.lock.json">
+      <Link>CraftersCloud.Blueprint.Domain.Tests\packages.lock.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Init\AssemblyFinder.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Init\AssemblyFinder.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Init\AutoMapperStartupExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Init\AutoMapperStartupExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Init\ConfigurationHelper.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Init\ConfigurationHelper.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Init\FluentValidationStartupExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Init\FluentValidationStartupExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Init\MvcStartupExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Init\MvcStartupExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Init\PollyStartupExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Init\PollyStartupExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Init\SerilogStartupExtension.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Init\SerilogStartupExtension.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Init\SettingsStartupExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Init\SettingsStartupExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Logging\LogContextMiddleware.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Logging\LogContextMiddleware.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Security\AuthenticationStartupExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Security\AuthenticationStartupExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Security\SwaggerAuthenticationStartupExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Security\SwaggerAuthenticationStartupExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Api\Startup\ContainerBuilderStartupExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Api\Startup\ContainerBuilderStartupExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Authorization\DefaultAuthorizationProvider.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Authorization\DefaultAuthorizationProvider.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Authorization\UserHasPermissionAttribute.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Authorization\UserHasPermissionAttribute.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Autofac\Modules\AuthorizationModule.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Autofac\Modules\AuthorizationModule.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Autofac\Modules\ConfigurationModule.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Autofac\Modules\ConfigurationModule.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Autofac\Modules\EntityFrameworkModule.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Autofac\Modules\EntityFrameworkModule.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Autofac\Modules\IdentityModule.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Autofac\Modules\IdentityModule.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Autofac\Modules\ServiceModule.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Autofac\Modules\ServiceModule.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Configuration\ConfigurationExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Configuration\ConfigurationExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Configuration\TestConfiguration.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Configuration\TestConfiguration.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\Configurations\EntityTypeBuilderExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\Configurations\EntityTypeBuilderExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\Configurations\EntityWithEnumIdConfiguration.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\Configurations\EntityWithEnumIdConfiguration.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\Configurations\PermissionConfiguration.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\Configurations\PermissionConfiguration.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\Configurations\ProductConfiguration.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\Configurations\ProductConfiguration.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\Configurations\RoleConfiguration.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\Configurations\RoleConfiguration.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\Configurations\RolePermission.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\Configurations\RolePermission.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\Configurations\UserConfiguration.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\Configurations\UserConfiguration.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\Configurations\UserStatusConfiguration.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\Configurations\UserStatusConfiguration.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\AppDbContext.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\AppDbContext.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\PopulateCreatedUpdatedInterceptor.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\PopulateCreatedUpdatedInterceptor.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Data\UserRepository.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Data\UserRepository.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Identity\ClaimsProvider.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Identity\ClaimsProvider.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Identity\CurrentUserProvider.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Identity\CurrentUserProvider.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Identity\IClaimsProvider.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Identity\IClaimsProvider.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Identity\SystemUserProvider.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Identity\SystemUserProvider.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Init\ConfigurationBuilderExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Init\ConfigurationBuilderExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\Init\MediatRStartupExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure\Init\MediatRStartupExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure\packages.lock.json">
+      <Link>CraftersCloud.Blueprint.Infrastructure\packages.lock.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\Autofac\TestModule.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\Autofac\TestModule.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\Configuration\TestConfigurationBuilder.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\Configuration\TestConfigurationBuilder.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\Database\DatabaseInitializer.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\Database\DatabaseInitializer.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\Database\TestDatabase.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\Database\TestDatabase.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\Impersonation\TestUserAuthenticationHandler.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\Impersonation\TestUserAuthenticationHandler.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\Impersonation\TestUserData.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\Impersonation\TestUserData.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\Impersonation\TestUserDataSeeding.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\Impersonation\TestUserDataSeeding.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\Impersonation\TestUserProvider.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\Impersonation\TestUserProvider.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\DbContextExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\DbContextExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\LoggerConfigurationExtensions.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\LoggerConfigurationExtensions.cs</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\packages.lock.json">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\packages.lock.json</Link>
+    </Content>
+    <Content Update="CraftersCloud.Blueprint.Infrastructure.Tests\SettableTimeProvider.cs">
+      <Link>CraftersCloud.Blueprint.Infrastructure.Tests\SettableTimeProvider.cs</Link>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="cleanup.cmd"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="icon-192x192.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MinVer">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

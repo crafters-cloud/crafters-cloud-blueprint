@@ -1,0 +1,110 @@
+﻿using Enigmatry.Entry.Core.Data;
+using FluentValidation;
+using JetBrains.Annotations;
+using MediatR;
+
+namespace CraftersCloud.Blueprint.Domain.Products.Commands;
+
+public static class ProductCreateOrUpdate
+{
+    [PublicAPI]
+    public class Command : IRequest<Result>
+    {
+        public Guid? Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Code { get; set; } = string.Empty;
+        public ProductType Type { get; set; }
+        public string Description { get; set; } = string.Empty;
+        public double Price { get; set; }
+        public int Amount { get; set; }
+        public string ContactEmail { get; set; } = string.Empty;
+        public string ContactPhone { get; set; } = string.Empty;
+        public string InfoLink { get; set; } = string.Empty;
+        public DateOnly? ExpiresOn { get; set; }
+        public bool FreeShipping { get; set; }
+        public bool HasDiscount { get; set; }
+        public float? Discount { get; set; }
+    }
+
+    [PublicAPI]
+    public class Result
+    {
+        public Guid Id { get; set; }
+    }
+
+    [UsedImplicitly]
+    public class Validator : AbstractValidator<Command>
+    {
+        private const string DynamicMessagesId = "[MESSAGE_TEMPLATE]";
+        private readonly IRepository<Product> _productRepository;
+
+        public Validator(IRepository<Product> productRepository)
+        {
+            _productRepository = productRepository;
+
+            RuleFor(x => x.Name).NotEmpty().MaximumLength(Product.NameMaxLength);
+            RuleFor(x => x.Code).NotEmpty();
+            RuleFor(x => x.Code)
+                .Must((command, code, context) => HaveValidCodePrefix(code, command, context))
+                .WithMessage($"{{{DynamicMessagesId}}}");
+            RuleFor(x => x.Price).GreaterThan(Product.PriceMinValue).LessThanOrEqualTo(Product.PriceMaxValue);
+            RuleFor(x => x.Amount).GreaterThan(Product.AmountMinValue);
+            RuleFor(x => x.ContactEmail).NotEmpty().EmailAddress();
+            RuleFor(x => x.ContactPhone).NotEmpty();
+            When(x => x.Type is ProductType.Food or ProductType.Drink, () =>
+            {
+                RuleFor(x => x.ExpiresOn).NotNull();
+            });
+            When(x => x.HasDiscount, () =>
+            {
+                RuleFor(x => x.Discount)
+                    .NotNull()
+                    .GreaterThanOrEqualTo(Product.DiscountMinValue)
+                    .LessThanOrEqualTo(Product.DiscountMaxValue);
+            });
+            RuleFor(x => x)
+                .Must(HaveFreeSpaceInStorageRoom)
+                .WithMessage(command => $"There is not enought space in storage room from {command.Amount} units of {command.Type}.");
+        }
+
+        private static bool HaveValidCodePrefix(string code, Command command, ValidationContext<Command> context)
+        {
+            if (command.Type == ProductType.Food && !code.StartsWith("FDXX", StringComparison.InvariantCulture))
+            {
+                context.MessageFormatter.AppendArgument(DynamicMessagesId, $"{command.Type} products code must begin with 'FDXX' prefix.");
+                return false;
+            }
+            else if (command.Type == ProductType.Drink! && code.StartsWith("DKXX", StringComparison.InvariantCulture))
+            {
+                context.MessageFormatter.AppendArgument(DynamicMessagesId, $"{command.Type} products code must begin with 'DKXX' prefix.");
+                return false;
+            }
+            else if (command.Type == ProductType.Book && !code.StartsWith("BKXX", StringComparison.InvariantCulture))
+            {
+                context.MessageFormatter.AppendArgument(DynamicMessagesId, $"{command.Type} products code must begin with 'BKXX' prefix.");
+                return false;
+            }
+            else if (command.Type == ProductType.Car && !code.StartsWith("CRXX", StringComparison.InvariantCulture))
+            {
+                context.MessageFormatter.AppendArgument(DynamicMessagesId, $"{command.Type} products code must begin with 'CRXX' prefix.");
+                return false;
+            }
+            return true;
+        }
+
+        private bool HaveFreeSpaceInStorageRoom(Command command)
+        {
+            var productTotalAmount = _productRepository.QueryAllSkipCache()
+                .Where(x => x.Type == command.Type)
+                .Sum(x => x.Amount);
+            var newTotalAmount = command.Amount + productTotalAmount;
+            return command.Type == ProductType.Book
+                ? newTotalAmount <= 10000
+                : command.Type == ProductType.Car
+                    ? newTotalAmount <= 25
+                    : command.Type == ProductType.Food
+                        ? newTotalAmount <= 5500
+                        : newTotalAmount <= 7000;
+        }
+    }
+}

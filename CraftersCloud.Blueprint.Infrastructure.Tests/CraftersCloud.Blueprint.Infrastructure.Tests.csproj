@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Enigmatry.Entry.Blueprint.Infrastructure.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Enigmatry.Entry.AspNetCore.Tests.SystemTextJson"/>
+    <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+    <PackageReference Include="MinVer">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NUnit"/>
+    <PackageReference Include="NUnit3TestAdapter">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design"/>
+    <PackageReference Include="Respawn"/>
+    <PackageReference Include="Testcontainers.MsSql"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Common.Tests\CraftersCloud.Blueprint.Common.Tests.csproj"/>
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Infrastructure\CraftersCloud.Blueprint.Infrastructure.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="CraftersCloud.Blueprint.Api.Tests"/>
+    <InternalsVisibleTo Include="Enigmatry.Entry.Blueprint.Scheduler.Tests"/>
+  </ItemGroup>
+
+</Project>
