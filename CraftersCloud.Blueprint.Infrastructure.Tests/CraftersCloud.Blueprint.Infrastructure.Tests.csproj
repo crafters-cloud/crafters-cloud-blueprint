@@ -5,19 +5,15 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="CraftersCloud.Core.AspNetCore.Tests.SystemTextJson"/>
-    <PackageReference Include="Microsoft.NET.Test.Sdk"/>
     <PackageReference Include="MinVer">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="NUnit"/>
-    <PackageReference Include="NUnit3TestAdapter">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design"/>
     <PackageReference Include="Respawn"/>
     <PackageReference Include="Testcontainers.MsSql"/>
+    <PackageReference Include="TUnit"/>
+    <PackageReference Include="Verify.TUnit"/>
   </ItemGroup>
 
   <ItemGroup>

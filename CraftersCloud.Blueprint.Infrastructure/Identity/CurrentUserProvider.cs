@@ -48,7 +48,8 @@ public class CurrentUserProvider(
                 .SingleOrDefault();
 
             _user = user != null
-                ? new UserContext(user.Id, new PermissionsContext(user.Role.Permissions.Select(x => x.Id).Distinct().ToArray()))
+                ? new UserContext(user.Id,
+                    new PermissionsContext(user.Role.Permissions.Select(x => x.Id).Distinct().ToArray()))
                 : null;
 
             return _user;

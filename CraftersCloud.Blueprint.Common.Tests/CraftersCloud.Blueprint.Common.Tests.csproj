@@ -8,18 +8,11 @@
     <PackageReference Include="CraftersCloud.Core.SmartEnums.VerifyTests"/>
     <PackageReference Include="FakeItEasy"/>
     <PackageReference Include="FluentAssertions"/>
-    <PackageReference Include="Microsoft.NET.Test.Sdk"/>
     <PackageReference Include="MinVer">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="NUnit"/>
-    <PackageReference Include="NUnit3TestAdapter">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Verify"/>
-    <PackageReference Include="Verify.NUnit"/>
+    <PackageReference Include="Verify.TUnit"/>
   </ItemGroup>
 
   <ItemGroup>

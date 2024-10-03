@@ -1,5 +1,4 @@
 ﻿using CraftersCloud.Blueprint.Domain.Users;
-using CraftersCloud.Core.EntityFramework;
 using CraftersCloud.Core.EntityFramework.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 

@@ -15,12 +15,13 @@ namespace CraftersCloud.Blueprint.Api.Tests.CoreFeatures;
 // Fixture that validates if Api project has been setup correctly
 // Uses arbitrary controller (in this case UserController) and verifies if basic operations, e.g. get, post, validations are correctly setup.  
 [Category("integration")]
+[NotInParallel]
 public class ApiSetupFixture : IntegrationFixtureBase
 {
     private User _user = null!;
 
-    [SetUp]
-    public void SetUp()
+    [Before(Test)]
+    public async Task SetUp()
     {
         _user = new UserBuilder()
             .WithEmailAddress("john_doe@john.doe")
@@ -28,7 +29,7 @@ public class ApiSetupFixture : IntegrationFixtureBase
             .WithRoleId(Role.SystemAdminRoleId)
             .WithStatusId(UserStatusId.Active);
 
-        AddAndSaveChanges(_user);
+        await AddAndSaveChangesAsync(_user);
     }
 
     [Test]
@@ -91,10 +92,11 @@ public class ApiSetupFixture : IntegrationFixtureBase
         await Verify(user);
     }
 
-    [TestCase("some user", "invalid email", "emailAddress", "is not a valid email address.")]
-    [TestCase("", "someuser@test.com", "fullName", "must not be empty.")]
-    [TestCase("some user", "", "emailAddress", "must not be empty.")]
-    [TestCase("John Doe", "john_doe@john.doe", "emailAddress", "EmailAddress is already taken")]
+    [Test]
+    [Arguments("some user", "invalid email", "emailAddress", "is not a valid email address.")]
+    [Arguments("", "someuser@test.com", "fullName", "must not be empty.")]
+    [Arguments("some user", "", "emailAddress", "must not be empty.")]
+    [Arguments("John Doe", "john_doe@john.doe", "emailAddress", "EmailAddress is already taken")]
     public async Task TestCreateReturnsValidationErrors(string name,
         string emailAddress,
         string validationField,

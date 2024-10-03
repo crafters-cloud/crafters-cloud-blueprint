@@ -9,7 +9,8 @@ using DomainUser = CraftersCloud.Blueprint.Domain.Users.User;
 namespace CraftersCloud.Blueprint.Infrastructure.Identity;
 
 [UsedImplicitly]
-public class SystemUserProvider(IRepository<DomainUser> userRepository, ILogger<SystemUserProvider> logger) : ICurrentUserProvider
+public class SystemUserProvider(IRepository<DomainUser> userRepository, ILogger<SystemUserProvider> logger)
+    : ICurrentUserProvider
 {
     public virtual Guid? UserId => DomainUser.SystemUserId;
     private UserContext? _user;
@@ -33,7 +34,9 @@ public class SystemUserProvider(IRepository<DomainUser> userRepository, ILogger<
 
             if (user == null)
             {
-                logger.LogWarning("User with Id: {SystemUserId} not found in the database. This user might not have been seeded", UserId);
+                logger.LogWarning(
+                    "User with Id: {SystemUserId} not found in the database. This user might not have been seeded",
+                    UserId);
                 return null;
             }
 

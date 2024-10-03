@@ -68,3 +68,4 @@ dotnet_style_qualification_for_field = false:hint
 dotnet_style_qualification_for_method = false:hint
 dotnet_style_qualification_for_property = false:hint
 dotnet_style_require_accessibility_modifiers = for_non_interface_members:hint
+dotnet_diagnostic.CS0436.severity = none

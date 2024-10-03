@@ -13,7 +13,7 @@
     <IncludeContentInPack>true</IncludeContentInPack>
     <NoDefaultExcludes>true</NoDefaultExcludes>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-<!--    <PackageIcon>icon-192x192.png</PackageIcon>-->
+    <!--    <PackageIcon>icon-192x192.png</PackageIcon>-->
     <PackageId>CraftersCloud.Blueprint.Template</PackageId>
     <PackageProjectUrl>https://https://github.com/crafters-cloud/crafters-cloud-blueprint</PackageProjectUrl>
     <PackageTags>CraftersCloud;Blueprint;dotnet-new;template</PackageTags>
@@ -30,12 +30,9 @@
 
   <ItemGroup>
     <Compile Remove="**\*"/>
-    <Content Include="**\*"
-             Exclude="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user;build-publish-nuget.yml;Build.ps1;Push.ps1"/>
-    <EmbeddedResource
-      Remove="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user"/>
-    <None
-      Remove="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user"/>
+    <Content Include="**\*" Exclude="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user;build-publish-nuget.yml;Build.ps1;Push.ps1"/>
+    <EmbeddedResource Remove="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user"/>
+    <None Remove="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user"/>
     <Content Update="CraftersCloud.Blueprint.Api\Connected Services\Key Vault\ConnectedService.json">
       <Link>CraftersCloud.Blueprint.Api\Connected Services\Key Vault\ConnectedService.json</Link>
     </Content>
@@ -498,12 +495,12 @@
     <None Remove="cleanup.cmd"/>
   </ItemGroup>
 
-<!--  <ItemGroup>-->
-<!--    <None Include="icon-192x192.png">-->
-<!--      <Pack>True</Pack>-->
-<!--      <PackagePath></PackagePath>-->
-<!--    </None>-->
-<!--  </ItemGroup>-->
+  <!--  <ItemGroup>-->
+  <!--    <None Include="icon-192x192.png">-->
+  <!--      <Pack>True</Pack>-->
+  <!--      <PackagePath></PackagePath>-->
+  <!--    </None>-->
+  <!--  </ItemGroup>-->
 
   <ItemGroup>
     <PackageReference Include="MinVer">

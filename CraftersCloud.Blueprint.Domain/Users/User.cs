@@ -21,7 +21,8 @@ public class User : EntityWithCreatedUpdated
     {
         var result = new User
         {
-            EmailAddress = command.EmailAddress, FullName = command.FullName, RoleId = command.RoleId, UserStatusId = command.UserStatusId
+            EmailAddress = command.EmailAddress, FullName = command.FullName, RoleId = command.RoleId,
+            UserStatusId = command.UserStatusId
         };
 
         result.AddDomainEvent(new UserCreatedDomainEvent(result.EmailAddress));
