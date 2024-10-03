@@ -1,16 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   
   <ItemGroup>
-    <Content Include="..\CraftersCloud.Blueprint.Api\Resources\*.json" LinkBase="Resources"/>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Resources\**"/>
-    <EmbeddedResource Remove="Resources\**"/>
-    <None Remove="Resources\**"/>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="coverlet.collector">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -29,12 +19,6 @@
     <ProjectReference Include="..\CraftersCloud.Blueprint.Data.Migrations\CraftersCloud.Blueprint.Data.Migrations.csproj"/>
     <ProjectReference Include="..\CraftersCloud.Blueprint.Domain.Tests\CraftersCloud.Blueprint.Domain.Tests.csproj"/>
     <ProjectReference Include="..\CraftersCloud.Blueprint.Infrastructure.Tests\CraftersCloud.Blueprint.Infrastructure.Tests.csproj"/>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="..\CraftersCloud.Blueprint.Api\Resources\*.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>
