@@ -22,7 +22,7 @@ public static class GetCompanies
         [PublicAPI]
         public class Item
         {
-            public Guid id { get; set; }
+            public Guid Id { get; set; }
             public string Name { get; set; } = string.Empty;
             public DateTimeOffset CreatedOn { get; set; }
             public DateTimeOffset UpdatedOn { get; set; }
@@ -45,5 +45,4 @@ public static class GetCompanies
             .ProjectTo<Response.Item>(mapper.ConfigurationProvider, cancellationToken)
             .ToPagedResponseAsync(request, cancellationToken);
     }
-
 }

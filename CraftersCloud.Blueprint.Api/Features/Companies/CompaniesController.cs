@@ -1,7 +1,5 @@
-﻿using CraftersCloud.Blueprint.Api.Features.Users;
-using CraftersCloud.Blueprint.Domain.Authorization;
+﻿using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Companies.Commands;
-using CraftersCloud.Blueprint.Domain.Users.Commands;
 using CraftersCloud.Blueprint.Infrastructure.Authorization;
 using CraftersCloud.Core.AspNetCore;
 using CraftersCloud.Core.Data;
@@ -44,8 +42,4 @@ public class CompaniesController (IUnitOfWork unitOfWork, IMediator mediator) : 
         await unitOfWork.SaveChangesAsync();
         return await Get(company.Id);
     }
-
-
-
-
 }

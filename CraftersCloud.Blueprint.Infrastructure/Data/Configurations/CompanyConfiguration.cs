@@ -9,7 +9,6 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
     public void Configure(EntityTypeBuilder<Company> builder)
     {
         builder.Property(c => c.Name).IsRequired().HasMaxLength(Company.NameMaxLength);
-        builder.HasIndex(c => c.Id).IsUnique();
         builder.HasCreatedByAndUpdatedBy();
     }
 }
