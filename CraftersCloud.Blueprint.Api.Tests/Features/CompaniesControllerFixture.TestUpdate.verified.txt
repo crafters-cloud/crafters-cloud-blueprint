@@ -1,1 +1,4 @@
-﻿
+﻿{
+  Id: Guid_1,
+  Name: Company  Name
+}

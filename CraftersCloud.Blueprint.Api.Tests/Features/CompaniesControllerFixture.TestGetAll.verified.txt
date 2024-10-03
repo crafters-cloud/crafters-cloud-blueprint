@@ -1,1 +1,8 @@
-﻿
+﻿[
+  {
+    Id: Guid_1,
+    Name: Company Name,
+    CreatedOn: DateTimeOffset_1,
+    UpdatedOn: DateTimeOffset_1
+  }
+]
