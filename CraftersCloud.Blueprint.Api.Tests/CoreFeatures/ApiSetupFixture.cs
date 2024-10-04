@@ -36,7 +36,8 @@ public class ApiSetupFixture : IntegrationFixtureBase
     public async Task TestGetAll()
     {
         var users = (await Client.GetAsync<PagedResponse<GetUsers.Response.Item>>(
-                new Uri("api/users", UriKind.RelativeOrAbsolute), new KeyValuePair<string, string>("SortBy", "EmailAddress")))
+                new Uri("api/users", UriKind.RelativeOrAbsolute),
+                new KeyValuePair<string, string>("SortBy", "EmailAddress")))
             ?.Items.ToList()!;
 
         await Verify(users);

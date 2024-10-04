@@ -5,11 +5,14 @@ namespace CraftersCloud.Blueprint.Infrastructure.Configuration;
 
 public static class ConfigurationExtensions
 {
-    public static bool AppUseDeveloperExceptionPage(this IConfiguration configuration) => configuration.GetValue("UseDeveloperExceptionPage", false);
+    public static bool AppUseDeveloperExceptionPage(this IConfiguration configuration) =>
+        configuration.GetValue("UseDeveloperExceptionPage", false);
 
-    public static AppSettings ReadAppSettings(this IConfiguration configuration) => configuration.ReadSettingsSection<AppSettings>("App");
+    public static AppSettings ReadAppSettings(this IConfiguration configuration) =>
+        configuration.ReadSettingsSection<AppSettings>("App");
 
-    public static KeyVaultSettings ReadKeyVaultSettings(this IConfiguration configuration) => configuration.ReadSettingsSection<KeyVaultSettings>(KeyVaultSettings.SectionName);
+    public static KeyVaultSettings ReadKeyVaultSettings(this IConfiguration configuration) =>
+        configuration.ReadSettingsSection<KeyVaultSettings>(KeyVaultSettings.SectionName);
 
     public static T ReadSettingsSection<T>(this IConfiguration configuration, string sectionName)
     {

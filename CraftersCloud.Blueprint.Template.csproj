@@ -29,10 +29,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="**\*"/>
-    <Content Include="**\*" Exclude="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user;build-publish-nuget.yml;Build.ps1;Push.ps1"/>
-    <EmbeddedResource Remove="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user"/>
-    <None Remove="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user"/>
+    <Compile Remove="**\*" />
+    <Content Include="**\*" Exclude="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user;build-publish-nuget.yml;Build.ps1;Push.ps1" />
+    <EmbeddedResource Remove="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user" />
+    <None Remove="**\bin\**;**\obj\**;**\dist\**;**\node_modules\**;.git\**;**\.vs\**;**\Artifacts\**;CraftersCloud.Blueprint.Template.csproj;**\_ReSharper.Caches\**;**\*.user" />
     <Content Update="CraftersCloud.Blueprint.Api\Connected Services\Key Vault\ConnectedService.json">
       <Link>CraftersCloud.Blueprint.Api\Connected Services\Key Vault\ConnectedService.json</Link>
     </Content>
@@ -492,7 +492,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="cleanup.cmd"/>
+    <None Remove="cleanup.cmd" />
   </ItemGroup>
 
   <!--  <ItemGroup>-->

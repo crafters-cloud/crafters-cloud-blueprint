@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using CraftersCloud.Blueprint.Domain.Authorization;
+﻿using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Infrastructure.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
@@ -69,8 +68,9 @@ internal class TestDatabase
     {
         var configurationBuilder = new ConfigurationBuilder();
         // how to get the assembly name of the entry assembly
-        var assemblyName = Assembly.GetEntryAssembly()?.GetName().Name ?? throw new InvalidOperationException("Failed to get assembly name");
-        
+        var assemblyName = Assembly.GetEntryAssembly()?.GetName().Name ??
+                           throw new InvalidOperationException("Failed to get assembly name");
+
         configurationBuilder.SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile($"{assemblyName}.testconfig.json", true);
         return configurationBuilder.Build();

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="coverlet.collector">
       <PrivateAssets>all</PrivateAssets>
@@ -13,13 +13,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="TUnit"/>
-    <PackageReference Include="Verify.TUnit"/>
+    <PackageReference Include="TUnit" />
+    <PackageReference Include="Verify.TUnit" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Common.Tests\CraftersCloud.Blueprint.Common.Tests.csproj"/>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Domain\CraftersCloud.Blueprint.Domain.csproj"/>
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Common.Tests\CraftersCloud.Blueprint.Common.Tests.csproj" />
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Domain\CraftersCloud.Blueprint.Domain.csproj" />
   </ItemGroup>
 
 </Project>

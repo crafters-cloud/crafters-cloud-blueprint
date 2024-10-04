@@ -3,31 +3,31 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="coverlet.collector">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="CraftersCloud.Core.AspNetCore.Tests.SystemTextJson"/>
+    <PackageReference Include="CraftersCloud.Core.AspNetCore.Tests.SystemTextJson" />
     <PackageReference Include="MinVer">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design"/>
-    <PackageReference Include="Respawn"/>
-    <PackageReference Include="Testcontainers.MsSql"/>
-    <PackageReference Include="TUnit"/>
-    <PackageReference Include="Verify.TUnit"/>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <PackageReference Include="Respawn" />
+    <PackageReference Include="Testcontainers.MsSql" />
+    <PackageReference Include="TUnit" />
+    <PackageReference Include="Verify.TUnit" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Common.Tests\CraftersCloud.Blueprint.Common.Tests.csproj"/>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Infrastructure\CraftersCloud.Blueprint.Infrastructure.csproj"/>
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Common.Tests\CraftersCloud.Blueprint.Common.Tests.csproj" />
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Infrastructure\CraftersCloud.Blueprint.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="CraftersCloud.Blueprint.Api.Tests"/>
+    <InternalsVisibleTo Include="CraftersCloud.Blueprint.Api.Tests" />
   </ItemGroup>
 
 </Project>
