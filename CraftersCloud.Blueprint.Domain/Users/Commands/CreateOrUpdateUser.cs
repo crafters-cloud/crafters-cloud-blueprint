@@ -17,6 +17,7 @@ public static class CreateOrUpdateUser
         public required Guid RoleId { get; set; }
         public UserStatusId UserStatusId { get; set; } = UserStatusId.Active;
         public Guid? CompanyId { get; set; }
+        public string CompanyName { get; set; } = string.Empty;
     }
 
     [UsedImplicitly]
@@ -28,6 +29,7 @@ public static class CreateOrUpdateUser
         {
             _userRepository = userRepository;
 
+            //todo validate company name?
             RuleFor(x => x.EmailAddress).NotEmpty().MaximumLength(User.EmailAddressMaxLength).EmailAddress();
             RuleFor(x => x.EmailAddress).Must(UniqueEmailAddress).WithMessage("EmailAddress is already taken");
             RuleFor(x => x.FullName).NotEmpty().MaximumLength(User.NameMaxLength);

@@ -27,7 +27,7 @@ public class UsersControllerFixture : IntegrationFixtureBase
     [SetUp]
     public void SetUp()
     {
-        _company = new CompanyBuilder().WithName("some company name").Build();
+        _company = new CompanyBuilder().WithName("FirstCompany").Build();
 
         _user = new UserBuilder()
             .WithEmailAddress("john_doe@john.doe")
@@ -82,7 +82,10 @@ public class UsersControllerFixture : IntegrationFixtureBase
             FullName = "some user",
             EmailAddress = "someuser@test.com",
             RoleId = Role.SystemAdminRoleId,
-            UserStatusId = UserStatusId.Active
+            UserStatusId = UserStatusId.Active,
+            CompanyId = null,
+            CompanyName = "another company name"
+            //TODO send company name
         };
         var user =
             await Client.PostAsync<CreateOrUpdateUser.Command, GetUserDetails.Response>("api/users", command);

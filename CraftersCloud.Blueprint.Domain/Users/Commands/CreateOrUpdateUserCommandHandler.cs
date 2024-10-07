@@ -14,6 +14,7 @@ public class CreateOrUpdateUserCommandHandler : IRequestHandler<CreateOrUpdateUs
     public async Task<User> Handle(CreateOrUpdateUser.Command request,
         CancellationToken cancellationToken)
     {
+        // todo if company by name does not exist, create it and assign it to the user
         User? user;
         if (request.Id.HasValue)
         {
