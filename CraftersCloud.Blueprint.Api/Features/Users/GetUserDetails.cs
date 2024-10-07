@@ -55,5 +55,5 @@ public static class GetUserDetails
         }
     }
 
-    private static IQueryable<User> BuildInclude(this IQueryable<User> query) => query.Include(x => x.UserStatus);
+    private static IQueryable<User> BuildInclude(this IQueryable<User> query) => query.Include(x => x.UserStatus).Include(x => x.Company);
 }

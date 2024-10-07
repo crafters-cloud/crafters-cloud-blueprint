@@ -2,6 +2,8 @@
 using CraftersCloud.Blueprint.Api.Features.Users;
 using CraftersCloud.Blueprint.Api.Tests.Infrastructure.Api;
 using CraftersCloud.Blueprint.Domain.Authorization;
+using CraftersCloud.Blueprint.Domain.Companies;
+using CraftersCloud.Blueprint.Domain.Tests.Companies;
 using CraftersCloud.Blueprint.Domain.Tests.Users;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
@@ -20,17 +22,29 @@ namespace CraftersCloud.Blueprint.Api.Tests.Features;
 public class UsersControllerFixture : IntegrationFixtureBase
 {
     private User _user = null!;
+    private Company _company = null!;
 
     [SetUp]
     public void SetUp()
     {
-        _user = new UserBuilder()
-            .WithEmailAddress("john_doe@john.doe")
-            .WithFullName("John Doe")
-            .WithRoleId(Role.SystemAdminRoleId)
-            .WithStatusId(UserStatusId.Active);
+        _company = new CompanyBuilder().WithName("some company name").Build();
 
-        AddAndSaveChanges(_user);
+
+        throw new NotImplementedException("test")
+        {
+
+        };
+        //AddAndSaveChanges(_company);
+
+        //_user = new UserBuilder()
+        //    .WithEmailAddress("john_doe@john.doe")
+        //    .WithFullName("John Doe")
+        //    .WithCompany(_company.Id)
+        //    .WithRoleId(Role.SystemAdminRoleId)
+        //    .WithStatusId(UserStatusId.Active);
+        
+
+        //AddAndSaveChanges(_user);
     }
 
     [Test]
