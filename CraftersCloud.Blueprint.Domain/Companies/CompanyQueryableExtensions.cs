@@ -8,4 +8,7 @@ public static class CompanyQueryableExtensions
         !string.IsNullOrWhiteSpace(name) ?
             query.Where(x => x.Name.Contains(name, StringComparison.CurrentCultureIgnoreCase))
             : query;
+
+    public static IQueryable<Company> QueryById(this IQueryable<Company> query, int? id) =>
+        query.Where(c => c.Id.Equals(id)); 
 }

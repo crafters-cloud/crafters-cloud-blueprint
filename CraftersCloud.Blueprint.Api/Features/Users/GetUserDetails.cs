@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Core.Data;
 using CraftersCloud.Core.Entities;
@@ -31,6 +32,8 @@ public static class GetUserDetails
         public UserStatusId UserStatusId { get; set; } = UserStatusId.Active;
         public string UserStatusName { get; set; } = string.Empty;
         public string UserStatusDescription { get; set; } = string.Empty;
+        public Guid CompanyId {  get; set; }
+        public string CompanyName { get; set; } = string.Empty;
     }
 
     [UsedImplicitly]

@@ -3,6 +3,8 @@ using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Companies.Commands;
 using CraftersCloud.Blueprint.Domain.Companies.DomainEvents;
+using CraftersCloud.Blueprint.Domain.Users;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace CraftersCloud.Blueprint.Domain.Companies;
 
@@ -11,6 +13,8 @@ public class Company : EntityWithCreatedUpdated
     public const int NameMaxLength = 200;
     public static readonly Guid? SystemCompanyId = new("741656C1-0234-44FC-81A1-37DE4314D624");
     public string Name { get; private set; } = string.Empty;
+    private IList<User> _users { get; set; } = [];
+    public IReadOnlyCollection<User> Users => _users.AsReadOnly();
 
     public static Company Create(CreateOrUpdateCompany.Command command)
     {
