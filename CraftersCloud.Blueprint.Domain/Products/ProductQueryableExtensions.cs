@@ -17,7 +17,9 @@ public static class ProductQueryableExtensions
             ? query.Where(e => e.ExpiresOn <= expiresBefore)
             : query;
 
-    public static IQueryable<Product> QueryInStatus(this IQueryable<Product> query, ProductStatus status) => query.Where(e => e.Status == status);
+    public static IQueryable<Product> QueryInStatus(this IQueryable<Product> query, ProductStatus status) =>
+        query.Where(e => e.Status == status);
 
-    public static IQueryable<Product> QueryCreatedBefore(this IQueryable<Product> query, DateTimeOffset dateTime) => query.Where(e => e.CreatedOn < dateTime);
+    public static IQueryable<Product> QueryCreatedBefore(this IQueryable<Product> query, DateTimeOffset dateTime) =>
+        query.Where(e => e.CreatedOn < dateTime);
 }

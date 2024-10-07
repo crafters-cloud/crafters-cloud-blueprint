@@ -29,22 +29,14 @@ public class UsersControllerFixture : IntegrationFixtureBase
     {
         _company = new CompanyBuilder().WithName("some company name").Build();
 
-
-        throw new NotImplementedException("test")
-        {
-
-        };
-        //AddAndSaveChanges(_company);
-
-        //_user = new UserBuilder()
-        //    .WithEmailAddress("john_doe@john.doe")
-        //    .WithFullName("John Doe")
-        //    .WithCompany(_company.Id)
-        //    .WithRoleId(Role.SystemAdminRoleId)
-        //    .WithStatusId(UserStatusId.Active);
+        _user = new UserBuilder()
+            .WithEmailAddress("john_doe@john.doe")
+            .WithFullName("John Doe")
+            .WithCompany(_company.Id)
+            .WithRoleId(Role.SystemAdminRoleId)
+            .WithStatusId(UserStatusId.Active);
         
-
-        //AddAndSaveChanges(_user);
+        AddAndSaveChanges(_user, _company);
     }
 
     [Test]

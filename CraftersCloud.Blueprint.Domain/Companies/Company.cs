@@ -13,7 +13,7 @@ public class Company : EntityWithCreatedUpdated
     public const int NameMaxLength = 200;
     public static readonly Guid? SystemCompanyId = new("741656C1-0234-44FC-81A1-37DE4314D624");
     public string Name { get; private set; } = string.Empty;
-    private IList<User> _users { get; set; } = [];
+    private readonly IList<User> _users = [];
     public IReadOnlyCollection<User> Users => _users.AsReadOnly();
 
     public static Company Create(CreateOrUpdateCompany.Command command)

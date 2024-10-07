@@ -33,9 +33,11 @@ public class AppDesignTimeDbContextFactory : IDesignTimeDbContextFactory<AppDbCo
 
         if (string.IsNullOrEmpty(connectionString))
         {
-            Console.WriteLine($"Connection string is not provided in the arguments. Falling back to developers connection string: '{DevelopmentConnectionsStrings.MainConnectionString}'");
+            Console.WriteLine(
+                $"Connection string is not provided in the arguments. Falling back to developers connection string: '{DevelopmentConnectionsStrings.MainConnectionString}'");
             connectionString = DevelopmentConnectionsStrings.MainConnectionString;
         }
+
         return connectionString;
     }
 }

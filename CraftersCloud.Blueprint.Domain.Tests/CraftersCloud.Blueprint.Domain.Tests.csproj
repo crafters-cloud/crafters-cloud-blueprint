@@ -4,7 +4,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk"/>
     <PackageReference Include="MinVer">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Common.Tests\CraftersCloud.Blueprint.Common.Tests.csproj" />
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Domain\CraftersCloud.Blueprint.Domain.csproj" />
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Common.Tests\CraftersCloud.Blueprint.Common.Tests.csproj"/>
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Domain\CraftersCloud.Blueprint.Domain.csproj"/>
   </ItemGroup>
 
 </Project>

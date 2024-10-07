@@ -16,7 +16,7 @@ public static class CreateOrUpdateUser
         public required string FullName { get; set; } = string.Empty;
         public required Guid RoleId { get; set; }
         public UserStatusId UserStatusId { get; set; } = UserStatusId.Active;
-        public Guid CompanyId { get; set; }
+        public Guid? CompanyId { get; set; }
     }
 
     [UsedImplicitly]

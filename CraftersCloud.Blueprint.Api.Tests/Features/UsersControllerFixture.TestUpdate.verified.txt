@@ -7,5 +7,7 @@
   UpdatedOn: DateTimeOffset_1,
   UserStatusId: Inactive,
   UserStatusName: Inactive,
-  UserStatusDescription: Inactive Status Description
+  UserStatusDescription: Inactive Status Description,
+  CompanyId: Guid_3,
+  CompanyName: some company name
 }

@@ -9,7 +9,6 @@ using CraftersCloud.Core.Paging;
 namespace CraftersCloud.Blueprint.Api.Tests.Features;
 
 [Category("integration")]
-
 public class CompaniesControllerFixture : IntegrationFixtureBase
 {
     private Company _company = null!;
@@ -25,7 +24,8 @@ public class CompaniesControllerFixture : IntegrationFixtureBase
     public async Task TestGetAll()
     {
         var companies = (await Client.GetAsync<PagedResponse<GetCompanies.Response.Item>>(
-            new Uri("api/companies", UriKind.RelativeOrAbsolute), new KeyValuePair<string, string>("Sort by", "Name")))
+                new Uri("api/companies", UriKind.RelativeOrAbsolute),
+                new KeyValuePair<string, string>("Sort by", "Name")))
             ?.Items.ToList();
         await Verify(companies);
     }

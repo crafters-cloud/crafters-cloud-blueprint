@@ -64,8 +64,8 @@ public class UserBuilder
             FullName = _fullName,
             EmailAddress = _emailAddress,
             RoleId = _roleId,
-            UserStatusId = _statusId
-            ,CompanyId = _companyId
+            UserStatusId = _statusId,
+            CompanyId = _companyId
         });
 
         return result;
