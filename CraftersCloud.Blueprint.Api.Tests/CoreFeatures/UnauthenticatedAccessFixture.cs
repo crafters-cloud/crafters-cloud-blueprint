@@ -5,6 +5,7 @@ using FluentAssertions;
 namespace CraftersCloud.Blueprint.Api.Tests.CoreFeatures;
 
 [Category("integration")]
+[NotInParallel]
 public class UnauthenticatedAccessFixture : IntegrationFixtureBase
 {
     public UnauthenticatedAccessFixture() => DisableUserAuthentication();

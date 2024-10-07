@@ -12,11 +12,14 @@ public static class TestUserData
     private const string TestEmailAddress = "test_user@xyz.com";
     private static readonly DateTimeOffset CreatedDate = new(2024, 1, 9, 0, 0, 0, TimeSpan.Zero);
 
-    public static ClaimsPrincipal CreateClaimsPrincipal() => new(new ClaimsIdentity([new Claim(ClaimTypes.Upn, TestEmailAddress)], "TestAuth"));
+    public static ClaimsPrincipal CreateClaimsPrincipal() =>
+        new(new ClaimsIdentity([new Claim(ClaimTypes.Upn, TestEmailAddress)], "TestAuth"));
 
-    public static User CreateTestUser() => CreateUser(TestUserId, TestEmailAddress, "INTEGRATION_TEST", Role.SystemAdminRoleId);
+    public static User CreateTestUser() =>
+        CreateUser(TestUserId, TestEmailAddress, "INTEGRATION_TEST", Role.SystemAdminRoleId);
 
-    public static User CreateSystemUser() => CreateUser(User.SystemUserId, "N/A", "System User", Role.SystemAdminRoleId);
+    public static User CreateSystemUser() =>
+        CreateUser(User.SystemUserId, "N/A", "System User", Role.SystemAdminRoleId);
 
     private static User CreateUser(Guid id, string email, string fullName, Guid roleId)
     {

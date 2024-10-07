@@ -5,24 +5,25 @@ using CraftersCloud.Blueprint.Infrastructure.Tests.Configuration;
 using CraftersCloud.Blueprint.Infrastructure.Tests.Database;
 using CraftersCloud.Blueprint.Infrastructure.Tests.Impersonation;
 using CraftersCloud.Core.AspNetCore.Tests.SystemTextJson.Http;
+using CraftersCloud.Core.AspNetCore.Tests.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using CraftersCloud.Core.AspNetCore.Tests.Utilities;
 
 namespace CraftersCloud.Blueprint.Api.Tests.Infrastructure.Api;
 
 public class IntegrationFixtureBase
 {
     private IConfiguration _configuration = null!;
-    private TestDatabase _testDatabase = null!;
-    private IServiceScope _testScope = null!;
-    private static ApiWebApplicationFactory _factory = null!;
+    private TestDatabase? _testDatabase;
+    private IServiceScope? _testScope;
+    private static ApiWebApplicationFactory? _factory;
     private bool _isUserAuthenticated = true;
-    protected HttpClient Client { get; private set; } = null!;
+    private HttpClient? _client;
+    protected HttpClient Client => _client!;
 
-    [SetUp]
-    protected async Task Setup()
+    [Before(Test)]
+    public async Task Setup()
     {
         _testDatabase = new TestDatabase();
 
@@ -35,7 +36,7 @@ public class IntegrationFixtureBase
 
         var scopeFactory = _factory.Services.GetRequiredService<IServiceScopeFactory>();
         _testScope = scopeFactory.CreateScope();
-        Client = _factory.CreateClient();
+        _client = _factory.CreateClient();
 
         var dbContext = Resolve<DbContext>();
         await TestDatabase.ResetAsync(dbContext);
@@ -53,19 +54,19 @@ public class IntegrationFixtureBase
         new TestUserDataSeeding(dbContext).Seed();
     }
 
-    [TearDown]
+    [After(Test)]
     public void Teardown()
     {
-        _factory.Dispose();
-        _testScope.Dispose();
-        Client.Dispose();
+        _factory?.Dispose();
+        _testScope?.Dispose();
+        _client?.Dispose();
     }
 
-    protected void AddAndSaveChanges(params object[] entities)
+    protected async Task AddAndSaveChangesAsync(params object[] entities)
     {
         var dbContext = Resolve<DbContext>();
         dbContext.AddRange(entities);
-        dbContext.SaveChanges();
+        await dbContext.SaveChangesAsync();
     }
 
     protected void AddToDbContext(params object[] entities)
@@ -83,6 +84,7 @@ public class IntegrationFixtureBase
         {
             return;
         }
+
         converters.AppRegisterJsonConverters();
     }
 
@@ -92,11 +94,12 @@ public class IntegrationFixtureBase
 
     protected IQueryable<T> QueryDbSkipCache<T>() where T : class => Resolve<DbContext>().QueryDbSkipCache<T>();
 
-    protected Task DeleteByIdsAndSaveChangesAsync<T, TId>(params TId[] ids) where T : class => Resolve<DbContext>().DeleteByIdsAndSaveChangesAsync<T, TId>(ids);
+    protected Task DeleteByIdsAndSaveChangesAsync<T, TId>(params TId[] ids) where T : class =>
+        Resolve<DbContext>().DeleteByIdsAndSaveChangesAsync<T, TId>(ids);
 
     private Task DeleteByIdAsync<T, TId>(TId id) where T : class => Resolve<DbContext>().DeleteByIdAsync<T, TId>(id);
 
-    protected T Resolve<T>() where T : notnull => _testScope.Resolve<T>();
+    protected T Resolve<T>() where T : notnull => _testScope!.Resolve<T>();
 
     protected void SetFixedUtcNow(DateTimeOffset value)
     {

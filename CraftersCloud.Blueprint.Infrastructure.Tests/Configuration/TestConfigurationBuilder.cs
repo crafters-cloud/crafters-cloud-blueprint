@@ -66,7 +66,7 @@ public class TestConfigurationBuilder
         return this;
     }
 
-    private static string GetSmtpPickupDirectoryLocation() => TestContext.CurrentContext.TestDirectory;
+    private static string GetSmtpPickupDirectoryLocation() => TestContext.Current?.TestDetails.TestName ?? string.Empty;
 
     private void EnsureParametersBeforeBuild()
     {

@@ -9,5 +9,6 @@ namespace CraftersCloud.Blueprint.Infrastructure.Autofac.Modules;
 [UsedImplicitly]
 public class AuthorizationModule : Module
 {
-    protected override void Load(ContainerBuilder builder) => builder.RegisterType<DefaultAuthorizationProvider>().As<IAuthorizationProvider<PermissionId>>().InstancePerLifetimeScope();
+    protected override void Load(ContainerBuilder builder) => builder.RegisterType<DefaultAuthorizationProvider>()
+        .As<IAuthorizationProvider<PermissionId>>().InstancePerLifetimeScope();
 }

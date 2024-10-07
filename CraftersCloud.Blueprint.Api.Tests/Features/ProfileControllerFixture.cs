@@ -5,6 +5,7 @@ using CraftersCloud.Core.AspNetCore.Tests.SystemTextJson.Http;
 namespace CraftersCloud.Blueprint.Api.Tests.Features;
 
 [Category("integration")]
+[NotInParallel]
 public class ProfileControllerFixture : IntegrationFixtureBase
 {
     [Test]

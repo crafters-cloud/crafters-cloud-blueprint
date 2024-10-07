@@ -47,6 +47,7 @@ public class PopulateCreatedUpdatedInterceptor(ITimeProvider timeProvider, Func<
                 entity.SetCreated(currentDateTime, userId);
                 entity.SetUpdated(currentDateTime, userId);
             }
+
             if (state == EntityState.Modified)
             {
                 entity.SetUpdated(currentDateTime, userId);

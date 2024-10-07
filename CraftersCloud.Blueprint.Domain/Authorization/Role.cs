@@ -22,6 +22,7 @@ public class Role : EntityWithGuidId
 
     public static IEnumerable<(Guid RoleId, PermissionId[] Permissions)> GetAllRolePermissions()
     {
-        yield return new ValueTuple<Guid, PermissionId[]>(SystemAdminRoleId, Enum.GetValues<PermissionId>().Except([PermissionId.None]).ToArray()); // all permissions
+        yield return new ValueTuple<Guid, PermissionId[]>(SystemAdminRoleId,
+            Enum.GetValues<PermissionId>().Except([PermissionId.None]).ToArray()); // all permissions
     }
 }

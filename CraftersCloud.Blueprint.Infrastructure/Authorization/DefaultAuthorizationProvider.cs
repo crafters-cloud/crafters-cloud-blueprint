@@ -4,7 +4,9 @@ using CraftersCloud.Core.AspNetCore.Authorization;
 
 namespace CraftersCloud.Blueprint.Infrastructure.Authorization;
 
-public class DefaultAuthorizationProvider(ICurrentUserProvider currentUserProvider) : IAuthorizationProvider<PermissionId>
+public class DefaultAuthorizationProvider(ICurrentUserProvider currentUserProvider)
+    : IAuthorizationProvider<PermissionId>
 {
-    public bool AuthorizePermissions(IEnumerable<PermissionId> permissions) => currentUserProvider.User?.Permissions.ContainsAny(permissions) ?? false;
+    public bool AuthorizePermissions(IEnumerable<PermissionId> permissions) =>
+        currentUserProvider.User?.Permissions.ContainsAny(permissions) ?? false;
 }

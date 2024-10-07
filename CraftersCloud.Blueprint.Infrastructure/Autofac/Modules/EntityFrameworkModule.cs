@@ -2,9 +2,8 @@
 using CraftersCloud.Blueprint.Infrastructure.Api.Init;
 using CraftersCloud.Blueprint.Infrastructure.Data;
 using CraftersCloud.Core.Data;
-using CraftersCloud.Core.Settings;
-using CraftersCloud.Core.EntityFramework;
 using CraftersCloud.Core.EntityFramework.Infrastructure;
+using CraftersCloud.Core.Settings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;

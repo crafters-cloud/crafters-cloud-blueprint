@@ -11,19 +11,20 @@ using FluentAssertions;
 namespace CraftersCloud.Blueprint.Api.Tests.CoreFeatures;
 
 [Category("integration")]
+[NotInParallel]
 public class AuthorizationFixture : IntegrationFixtureBase
 {
     private Role? _testRole;
 
-    [SetUp]
-    public void SetUp()
+    [Before(Test)]
+    public async Task SetUp()
     {
         _testRole = new Role { Name = "TestRole" };
         _testRole.SetPermissions(QueryDb<Permission>().Where(p => p.Id == PermissionId.UsersRead));
 
         var currentUser = QueryCurrentUser();
         currentUser.UpdateRole(_testRole);
-        AddAndSaveChanges(_testRole);
+        await AddAndSaveChangesAsync(_testRole);
     }
 
     [Test]
@@ -55,7 +56,7 @@ public class AuthorizationFixture : IntegrationFixtureBase
         response.StatusCode.Should().Be(HttpStatusCode.OK);
     }
 
-    [TearDown]
+    [After(Test)]
     public async Task TearDown()
     {
         var currentUser = QueryCurrentUser();

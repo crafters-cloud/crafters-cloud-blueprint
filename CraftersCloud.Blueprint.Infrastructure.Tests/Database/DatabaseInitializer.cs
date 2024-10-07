@@ -25,7 +25,9 @@ internal static class DatabaseInitializer
     {
         try
         {
-            var dbDoesNotExist = !dbContext.Database.CanConnect(); // this will throw SqlException if connection to server can not be made, and true / false depending if db exists
+            var dbDoesNotExist =
+                !dbContext.Database
+                    .CanConnect(); // this will throw SqlException if connection to server can not be made, and true / false depending if db exists
             var pendingMigrations = dbContext.Database.GetPendingMigrations().ToList();
             return dbDoesNotExist || pendingMigrations.Any();
         }
@@ -82,5 +84,5 @@ internal static class DatabaseInitializer
         }
     }
 
-    private static void WriteLine(string message) => TestContext.WriteLine(message);
+    private static void WriteLine(string message) => TestContext.Current?.OutputWriter.WriteLine(message);
 }

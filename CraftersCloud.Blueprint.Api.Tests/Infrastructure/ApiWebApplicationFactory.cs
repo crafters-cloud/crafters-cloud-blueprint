@@ -34,7 +34,8 @@ internal class ApiWebApplicationFactory : WebApplicationFactory<Program>
             services.AddAuthentication(TestUserAuthenticationHandler.AuthenticationScheme)
                 .AddScheme<TestAuthenticationOptions, TestUserAuthenticationHandler>(
                     TestUserAuthenticationHandler.AuthenticationScheme,
-                    options => options.TestPrincipalFactory = () => _isUserAuthenticated ? TestUserData.CreateClaimsPrincipal() : null);
+                    options => options.TestPrincipalFactory = () =>
+                        _isUserAuthenticated ? TestUserData.CreateClaimsPrincipal() : null);
         });
 
     protected override IHost CreateHost(IHostBuilder builder)

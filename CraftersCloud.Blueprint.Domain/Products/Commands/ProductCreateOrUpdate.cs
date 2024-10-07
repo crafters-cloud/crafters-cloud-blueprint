@@ -64,31 +64,37 @@ public static class ProductCreateOrUpdate
             });
             RuleFor(x => x)
                 .Must(HaveFreeSpaceInStorageRoom)
-                .WithMessage(command => $"There is not enought space in storage room from {command.Amount} units of {command.Type}.");
+                .WithMessage(command =>
+                    $"There is not enought space in storage room from {command.Amount} units of {command.Type}.");
         }
 
         private static bool HaveValidCodePrefix(string code, Command command, ValidationContext<Command> context)
         {
             if (command.Type == ProductType.Food && !code.StartsWith("FDXX", StringComparison.InvariantCulture))
             {
-                context.MessageFormatter.AppendArgument(DynamicMessagesId, $"{command.Type} products code must begin with 'FDXX' prefix.");
+                context.MessageFormatter.AppendArgument(DynamicMessagesId,
+                    $"{command.Type} products code must begin with 'FDXX' prefix.");
                 return false;
             }
             else if (command.Type == ProductType.Drink! && code.StartsWith("DKXX", StringComparison.InvariantCulture))
             {
-                context.MessageFormatter.AppendArgument(DynamicMessagesId, $"{command.Type} products code must begin with 'DKXX' prefix.");
+                context.MessageFormatter.AppendArgument(DynamicMessagesId,
+                    $"{command.Type} products code must begin with 'DKXX' prefix.");
                 return false;
             }
             else if (command.Type == ProductType.Book && !code.StartsWith("BKXX", StringComparison.InvariantCulture))
             {
-                context.MessageFormatter.AppendArgument(DynamicMessagesId, $"{command.Type} products code must begin with 'BKXX' prefix.");
+                context.MessageFormatter.AppendArgument(DynamicMessagesId,
+                    $"{command.Type} products code must begin with 'BKXX' prefix.");
                 return false;
             }
             else if (command.Type == ProductType.Car && !code.StartsWith("CRXX", StringComparison.InvariantCulture))
             {
-                context.MessageFormatter.AppendArgument(DynamicMessagesId, $"{command.Type} products code must begin with 'CRXX' prefix.");
+                context.MessageFormatter.AppendArgument(DynamicMessagesId,
+                    $"{command.Type} products code must begin with 'CRXX' prefix.");
                 return false;
             }
+
             return true;
         }
 

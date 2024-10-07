@@ -21,7 +21,8 @@ public static class RemoveProduct
 
         public async Task Handle(Command request, CancellationToken cancellationToken)
         {
-            var product = await _repository.FindByIdAsync(request.Id) ?? throw new InvalidOperationException("Product could not be found");
+            var product = await _repository.FindByIdAsync(request.Id) ??
+                          throw new InvalidOperationException("Product could not be found");
 
             _repository.Delete(product);
         }

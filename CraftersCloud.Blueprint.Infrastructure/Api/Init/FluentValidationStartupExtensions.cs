@@ -8,7 +8,8 @@ namespace CraftersCloud.Blueprint.Infrastructure.Api.Init;
 
 public static class FluentValidationStartupExtensions
 {
-    public static void AppConfigureFluentValidation(this IApplicationBuilder _) => ValidatorOptions.Global.PropertyNameResolver = CamelCasePropertyNameResolver.ResolvePropertyName;
+    public static void AppConfigureFluentValidation(this IApplicationBuilder _) =>
+        ValidatorOptions.Global.PropertyNameResolver = CamelCasePropertyNameResolver.ResolvePropertyName;
 
     public static IServiceCollection AppAddFluentValidation(this IServiceCollection services) =>
         services.AddValidatorsFromAssemblies(new List<Assembly>()

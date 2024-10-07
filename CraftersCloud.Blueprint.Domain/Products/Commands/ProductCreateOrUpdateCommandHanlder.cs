@@ -5,13 +5,16 @@ using MediatR;
 namespace CraftersCloud.Blueprint.Domain.Products.Commands;
 
 [UsedImplicitly]
-public class ProductCreateOrUpdateCommandHanlder : IRequestHandler<ProductCreateOrUpdate.Command, ProductCreateOrUpdate.Result>
+public class
+    ProductCreateOrUpdateCommandHanlder : IRequestHandler<ProductCreateOrUpdate.Command, ProductCreateOrUpdate.Result>
 {
     private readonly IRepository<Product, Guid> _productRepository;
 
-    public ProductCreateOrUpdateCommandHanlder(IRepository<Product, Guid> productRepository) => _productRepository = productRepository;
+    public ProductCreateOrUpdateCommandHanlder(IRepository<Product, Guid> productRepository) =>
+        _productRepository = productRepository;
 
-    public async Task<ProductCreateOrUpdate.Result> Handle(ProductCreateOrUpdate.Command request, CancellationToken cancellationToken)
+    public async Task<ProductCreateOrUpdate.Result> Handle(ProductCreateOrUpdate.Command request,
+        CancellationToken cancellationToken)
     {
         Product result;
         if (request.Id.HasValue)

@@ -17,12 +17,13 @@ namespace CraftersCloud.Blueprint.Api.Tests.Features;
 // Integration tests should be used for happy flows.
 // For un-happy flows (e.g. edge cases), or complex business rules
 // write unit tests.
+[NotInParallel]
 public class UsersControllerFixture : IntegrationFixtureBase
 {
     private User _user = null!;
 
-    [SetUp]
-    public void SetUp()
+    [Before(Test)]
+    public async Task SetUp()
     {
         _user = new UserBuilder()
             .WithEmailAddress("john_doe@john.doe")
@@ -30,14 +31,15 @@ public class UsersControllerFixture : IntegrationFixtureBase
             .WithRoleId(Role.SystemAdminRoleId)
             .WithStatusId(UserStatusId.Active);
 
-        AddAndSaveChanges(_user);
+        await AddAndSaveChangesAsync(_user);
     }
 
     [Test]
     public async Task TestGetAll()
     {
         var users = (await Client.GetAsync<PagedResponse<GetUsers.Response.Item>>(
-                new Uri("api/users", UriKind.RelativeOrAbsolute), new KeyValuePair<string, string>("SortBy", "EmailAddress")))
+                new Uri("api/users", UriKind.RelativeOrAbsolute),
+                new KeyValuePair<string, string>("SortBy", "EmailAddress")))
             ?.Items.ToList()!;
 
         await Verify(users);

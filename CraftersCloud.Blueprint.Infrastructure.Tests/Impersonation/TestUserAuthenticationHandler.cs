@@ -25,7 +25,8 @@ public class TestUserAuthenticationHandler(
         return Task.FromResult(authResult);
     }
 
-    private static AuthenticateResult AuthenticatedUserResult(ClaimsPrincipal testPrincipal) => AuthenticateResult.Success(new AuthenticationTicket(testPrincipal, AuthenticationScheme));
+    private static AuthenticateResult AuthenticatedUserResult(ClaimsPrincipal testPrincipal) =>
+        AuthenticateResult.Success(new AuthenticationTicket(testPrincipal, AuthenticationScheme));
 }
 
 public class TestAuthenticationOptions : AuthenticationSchemeOptions

@@ -1,5 +1,4 @@
 ﻿using CraftersCloud.Blueprint.Infrastructure.Api.Init;
-using CraftersCloud.Core.EntityFramework;
 using CraftersCloud.Core.EntityFramework.Infrastructure;
 using CraftersCloud.Core.SmartEnums.EntityFramework;
 using JetBrains.Annotations;
@@ -21,5 +20,8 @@ public class AppDbContext(DbContextOptions options) : EntitiesDbContext(CreateOp
         modelBuilder.CoreConfigureSmartEnums();
     }
 
-    private static EntitiesDbContextOptions CreateOptions() => new() { ConfigurationAssembly = AssemblyFinder.InfrastructureAssembly, EntitiesAssembly = AssemblyFinder.DomainAssembly };
+    private static EntitiesDbContextOptions CreateOptions() => new()
+    {
+        ConfigurationAssembly = AssemblyFinder.InfrastructureAssembly, EntitiesAssembly = AssemblyFinder.DomainAssembly
+    };
 }
