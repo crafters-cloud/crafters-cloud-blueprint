@@ -1,4 +1,5 @@
-﻿using CraftersCloud.Core.Data;
+﻿using CraftersCloud.Blueprint.Domain.Companies;
+using CraftersCloud.Core.Data;
 using CraftersCloud.Core.Entities;
 using FluentValidation;
 using JetBrains.Annotations;
@@ -29,7 +30,7 @@ public static class CreateOrUpdateUser
         {
             _userRepository = userRepository;
 
-            //todo validate company name?
+            RuleFor(x => x.CompanyName).MaximumLength(Company.NameMaxLength);
             RuleFor(x => x.EmailAddress).NotEmpty().MaximumLength(User.EmailAddressMaxLength).EmailAddress();
             RuleFor(x => x.EmailAddress).Must(UniqueEmailAddress).WithMessage("EmailAddress is already taken");
             RuleFor(x => x.FullName).NotEmpty().MaximumLength(User.NameMaxLength);
