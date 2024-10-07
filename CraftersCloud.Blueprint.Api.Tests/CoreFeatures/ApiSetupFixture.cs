@@ -23,6 +23,7 @@ public class ApiSetupFixture : IntegrationFixtureBase
     [Before(Test)]
     public async Task SetUp()
     {
+        SetFixedUtcNow(new DateTimeOffset(2020, 1, 2, 0, 0, 0, TimeSpan.Zero));
         _user = new UserBuilder()
             .WithEmailAddress("john_doe@john.doe")
             .WithFullName("John Doe")
