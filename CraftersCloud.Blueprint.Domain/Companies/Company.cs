@@ -1,10 +1,7 @@
 ﻿using CraftersCloud.Blueprint.Core.Entities;
-using CraftersCloud.Blueprint.Domain.Authorization;
-using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Companies.Commands;
 using CraftersCloud.Blueprint.Domain.Companies.DomainEvents;
 using CraftersCloud.Blueprint.Domain.Users;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace CraftersCloud.Blueprint.Domain.Companies;
 

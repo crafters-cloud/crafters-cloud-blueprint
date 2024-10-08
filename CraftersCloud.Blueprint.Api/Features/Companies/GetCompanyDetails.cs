@@ -15,7 +15,6 @@ public static class GetCompanyDetails
     {
         public Guid Id { get; set; }
         public static Request ById(Guid id) => new Request { Id = id };
-
     }
 
     [PublicAPI]
