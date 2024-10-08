@@ -9,6 +9,6 @@ public static class CompanyQueryableExtensions
             query.Where(x => x.Name.Contains(name, StringComparison.CurrentCultureIgnoreCase))
             : query;
 
-    public static IQueryable<Company> QueryById(this IQueryable<Company> query, int? id) =>
-        query.Where(c => c.Id.Equals(id)); 
+    public static IQueryable<Company> QueryById(this IQueryable<Company> query, Guid? id) =>
+        query.Where(c => c.Id ==id); 
 }

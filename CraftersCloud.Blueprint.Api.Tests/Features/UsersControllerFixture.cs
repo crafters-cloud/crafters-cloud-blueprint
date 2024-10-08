@@ -83,7 +83,6 @@ public class UsersControllerFixture : IntegrationFixtureBase
             EmailAddress = "someuser@test.com",
             RoleId = Role.SystemAdminRoleId,
             UserStatusId = UserStatusId.Active,
-            CompanyId = null,
             CompanyName = "another company name"
             //TODO send company name
         };

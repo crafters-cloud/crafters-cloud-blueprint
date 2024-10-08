@@ -9,5 +9,5 @@
   UserStatusName: Inactive,
   UserStatusDescription: Inactive Status Description,
   CompanyId: Guid_3,
-  CompanyName: some company name
+  CompanyName: FirstCompany
 }

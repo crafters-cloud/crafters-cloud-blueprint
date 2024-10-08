@@ -9,5 +9,5 @@
   UserStatusName: Active,
   UserStatusDescription: Active Status Description,
   CompanyId: Guid_3,
-  CompanyName: some company name
+  CompanyName: FirstCompany
 }

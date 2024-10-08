@@ -12,7 +12,7 @@ public class UserBuilder
     private string _emailAddress = string.Empty;
     private Guid _id = SequentialGuidGenerator.Generate();
     private UserStatusId _statusId = UserStatusId.Active;
-    private Guid _companyId;
+    private Guid? _companyId;
 
     public UserBuilder WithEmailAddress(string value)
     {

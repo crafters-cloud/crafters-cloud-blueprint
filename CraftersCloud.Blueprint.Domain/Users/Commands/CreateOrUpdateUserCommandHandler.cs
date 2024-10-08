@@ -1,10 +1,10 @@
 ﻿using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Companies.Commands;
-using CraftersCloud.Blueprint.Domain.Companies.DomainEvents;
 using CraftersCloud.Core.Data;
 using CraftersCloud.Core.Helpers;
 using JetBrains.Annotations;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace CraftersCloud.Blueprint.Domain.Users.Commands;
 
@@ -17,21 +17,18 @@ public class CreateOrUpdateUserCommandHandler
         CancellationToken cancellationToken)
     {
         // todo if company by name does not exist, create it and assign it to the user
-        if (request.CompanyName.HasContent())
+        var company = await companyRepository.QueryAll().QueryById(request.CompanyId.GetValueOrDefault()).SingleOrDefaultAsync(cancellationToken: cancellationToken);
+        if (request.CompanyName.HasContent() && company == null)
         {
-            //var company = companies.QueryByName(request.CompanyName).FirstOrDefault();
-            //if (company == null)
-            //{ 
-
-            //}
-            Company? company;
-            company = await companyRepository.FindByIdAsync(request.CompanyId);
-            if (company == null)
+            var command = new CreateOrUpdateCompany.Command
             {
-                var newCompany = new Company { Name = request.CompanyName };
-                newCompany.AddDomainEvent(new CompanyCreatedDomainEvent(request.CompanyName));
-            }
+                Id = request.CompanyId,
+                Name = request.CompanyName
+            };
+            company = Company.Create(command);
+            companyRepository.Add(company);
         }
+        
         User? user;
         if (request.Id.HasValue)
         {
