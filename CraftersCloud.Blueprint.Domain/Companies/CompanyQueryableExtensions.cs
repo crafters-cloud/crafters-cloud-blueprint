@@ -10,7 +10,7 @@ public static class CompanyQueryableExtensions
             : query;
     public static IQueryable<Company> QueryByNameExact(this IQueryable<Company> query, string? name) =>
         !string.IsNullOrWhiteSpace(name) ?
-            query.Where(x => x.Name.Equals(name, StringComparison.CurrentCultureIgnoreCase))
+            query.Where(x => x.Name.ToLower() == name.ToLower())
             : query;
 
     public static IQueryable<Company> QueryById(this IQueryable<Company> query, Guid? id) =>

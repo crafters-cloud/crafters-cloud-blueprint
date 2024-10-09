@@ -98,10 +98,11 @@ public class UsersControllerFixture : IntegrationFixtureBase
         var command = new CreateOrUpdateUser.Command
         {
             Id = _user.Id,
-            FullName = "some user",
+            FullName = "some other user",
             EmailAddress = "someuser@test.com",
             RoleId = Role.SystemAdminRoleId,
-            UserStatusId = UserStatusId.Inactive
+            UserStatusId = UserStatusId.Inactive,
+            CompanyName = "Second Company"
         };
         var user =
             await Client.PostAsync<CreateOrUpdateUser.Command, GetUserDetails.Response>("api/users", command);

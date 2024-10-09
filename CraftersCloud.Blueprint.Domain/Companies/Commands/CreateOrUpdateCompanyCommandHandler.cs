@@ -12,7 +12,6 @@ public class CreateOrUpdateCompanyCommandHandler : IRequestHandler<CreateOrUpdat
 
     public CreateOrUpdateCompanyCommandHandler(IRepository<Company, Guid> companyRepository) => _companyRepository = companyRepository;
 
-
     public async Task<Company> Handle(CreateOrUpdateCompany.Command request, CancellationToken cancellationToken)
     {
         Company? company;

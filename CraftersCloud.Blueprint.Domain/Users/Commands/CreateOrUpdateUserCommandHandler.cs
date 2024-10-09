@@ -1,6 +1,7 @@
 ﻿using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Companies.Commands;
 using CraftersCloud.Core.Data;
+using CraftersCloud.Core.Entities;
 using CraftersCloud.Core.Helpers;
 using JetBrains.Annotations;
 using MediatR;
@@ -15,22 +16,21 @@ public class CreateOrUpdateUserCommandHandler
     public async Task<User> Handle(CreateOrUpdateUser.Command request,
         CancellationToken cancellationToken)
     {
-        // todo if company by name does not exist, create it and assign it to the user
-        //var company = await companyRepository.QueryAll().QueryById(request.CompanyId.GetValueOrDefault()).SingleOrDefaultAsync(cancellationToken: cancellationToken);
-        var company = await companyRepository.QueryAll().QueryByNameExact(request.CompanyName).SingleOrDefaultAsync(cancellationToken);
-        if (request.CompanyName.HasContent() && company == null)
+        if (request.CompanyName.HasContent())
         {
-            var command = new CreateOrUpdateCompany.Command
+            var company = await companyRepository.QueryAll().QueryByNameExact(request.CompanyName).SingleOrDefaultAsync(cancellationToken);
+            if (company == null)
             {
-                Id = request.CompanyId,
-                Name = request.CompanyName
-            };
-            company = Company.Create(command);
-            companyRepository.Add(company);
+                var command = new CreateOrUpdateCompany.Command
+                {
+                    Id = SequentialGuidGenerator.Generate(),
+                    Name = request.CompanyName
+                };
+                company = Company.Create(command);
+                request.CompanyId = company.Id;
+                companyRepository.Add(company);
+            }
         }
-
-        //todo: if the request has name of existing company, but no company id
-        
         User? user;
         if (request.Id.HasValue)
         {
