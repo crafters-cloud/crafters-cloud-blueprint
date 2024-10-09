@@ -17,14 +17,8 @@ namespace CraftersCloud.Blueprint.Domain.Companies.Commands
         [UsedImplicitly]
         public class Validator : AbstractValidator<Command>
         {
-            private readonly IRepository<Company> _companyRepository;
-
-            public Validator(IRepository<Company> companyRepository)
-            {
-                _companyRepository = companyRepository;
-
+            public Validator(IRepository<Company> companyRepository) => 
                 RuleFor(x => x.Name).NotEmpty().MaximumLength(Company.NameMaxLength);
-            }
         }
     }
 }

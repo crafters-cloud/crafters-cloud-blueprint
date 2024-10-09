@@ -12,7 +12,6 @@ public static class CompanyQueryableExtensions
         !string.IsNullOrWhiteSpace(name) ?
             query.Where(x => x.Name.ToLower() == name.ToLower())
             : query;
-
     public static IQueryable<Company> QueryById(this IQueryable<Company> query, Guid? id) =>
         query.Where(c => c.Id ==id); 
 }

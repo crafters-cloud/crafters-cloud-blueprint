@@ -13,9 +13,11 @@ public class Company : EntityWithCreatedUpdated
     private readonly IList<User> _users = [];
     public IReadOnlyCollection<User> Users => _users.AsReadOnly();
 
-    public static Company Create(CreateOrUpdateCompany.Command command)
+    public static Company Create(CreateOrUpdateCompany.Command command) => Create(command.Name);
+
+    public static Company Create(string companyName)
     {
-        var result = new Company {Name = command.Name};
+        var result = new Company { Name = companyName };
         result.AddDomainEvent(new CompanyCreatedDomainEvent(result.Name));
 
         return result;

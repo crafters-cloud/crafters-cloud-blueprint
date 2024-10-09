@@ -3,7 +3,6 @@ using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
 using CraftersCloud.Blueprint.Domain.Users.DomainEvents;
-using System.Runtime.InteropServices.Marshalling;
 
 namespace CraftersCloud.Blueprint.Domain.Users;
 
@@ -19,7 +18,7 @@ public class User : EntityWithCreatedUpdated
     public UserStatusId UserStatusId { get; private set; } = null!;
     public UserStatus UserStatus { get; private set; } = null!;
     public Guid? CompanyId { get; private set; }
-    public Company? Company { get; private set; } = null!;
+    public Company? Company { get; private set; }
 
     public static User Create(CreateOrUpdateUser.Command command)
     {

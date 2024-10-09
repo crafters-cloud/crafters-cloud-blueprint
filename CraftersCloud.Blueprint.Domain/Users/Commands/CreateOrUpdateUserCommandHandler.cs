@@ -2,6 +2,7 @@
 using CraftersCloud.Blueprint.Domain.Companies.Commands;
 using CraftersCloud.Core.Data;
 using CraftersCloud.Core.Entities;
+using CraftersCloud.Core.EntityFramework;
 using CraftersCloud.Core.Helpers;
 using JetBrains.Annotations;
 using MediatR;
@@ -18,27 +19,25 @@ public class CreateOrUpdateUserCommandHandler
     {
         if (request.CompanyName.HasContent())
         {
-            var company = await companyRepository.QueryAll().QueryByNameExact(request.CompanyName).SingleOrDefaultAsync(cancellationToken);
+            var company = await companyRepository.QueryAll()
+                .QueryByNameExact(request.CompanyName)
+                .SingleOrDefaultAsync(cancellationToken);
+
             if (company == null)
             {
-                var command = new CreateOrUpdateCompany.Command
-                {
-                    Id = SequentialGuidGenerator.Generate(),
-                    Name = request.CompanyName
-                };
-                company = Company.Create(command);
+                company = Company.Create(request.CompanyName);
                 request.CompanyId = company.Id;
                 companyRepository.Add(company);
             }
         }
+
         User? user;
         if (request.Id.HasValue)
         {
-            user = await userRepository.FindByIdAsync(request.Id.Value);
-            if (user == null)
-            {
-                throw new InvalidOperationException("missing user");
-            }
+            user = await userRepository.QueryAll()
+                .QueryById(request.Id.Value)
+                .SingleOrNotFoundAsync(cancellationToken: cancellationToken);
+            
             user.Update(request);
         }
         else
