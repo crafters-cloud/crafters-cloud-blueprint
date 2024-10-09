@@ -36,4 +36,13 @@ public class CompanyQueryableExtensionsFixture
         result.Count.Should().Be(expectedCount);
     }
 
+    [TestCase("name1", 1, TestName = "Should find v1")]
+    [TestCase("name2", 1, TestName = "Should find v2")]
+    [TestCase("name", 0, TestName = "Should not find v1")]
+    [TestCase("name3", 0, TestName = "Should not find v2")]
+    public void TestQueryByNameExact(string name, int expectedCount)
+    {
+        var result = _query.QueryByNameExact(name).ToList();
+        result.Count.Should().Be(expectedCount);
+    }
 }

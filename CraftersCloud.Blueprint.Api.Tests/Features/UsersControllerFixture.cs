@@ -84,7 +84,6 @@ public class UsersControllerFixture : IntegrationFixtureBase
             RoleId = Role.SystemAdminRoleId,
             UserStatusId = UserStatusId.Active,
             CompanyName = "another company name"
-            //TODO send company name
         };
         var user =
             await Client.PostAsync<CreateOrUpdateUser.Command, GetUserDetails.Response>("api/users", command);
