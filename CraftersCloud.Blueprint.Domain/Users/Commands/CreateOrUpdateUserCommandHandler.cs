@@ -1,5 +1,4 @@
 ﻿using CraftersCloud.Blueprint.Domain.Companies;
-using CraftersCloud.Blueprint.Domain.Companies.Commands;
 using CraftersCloud.Core.Data;
 using CraftersCloud.Core.Entities;
 using CraftersCloud.Core.EntityFramework;
@@ -12,7 +11,8 @@ namespace CraftersCloud.Blueprint.Domain.Users.Commands;
 
 [UsedImplicitly]
 public class CreateOrUpdateUserCommandHandler
-    (IRepository<User, Guid> userRepository, IRepository<Company, Guid> companyRepository) : IRequestHandler<CreateOrUpdateUser.Command, User>
+    (IRepository<User, Guid> userRepository, IRepository<Company, Guid> companyRepository) 
+    : IRequestHandler<CreateOrUpdateUser.Command, User>
 {
     public async Task<User> Handle(CreateOrUpdateUser.Command request,
         CancellationToken cancellationToken)

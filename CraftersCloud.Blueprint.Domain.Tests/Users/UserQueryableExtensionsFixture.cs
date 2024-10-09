@@ -1,4 +1,6 @@
 ﻿using CraftersCloud.Blueprint.Domain.Authorization;
+using CraftersCloud.Blueprint.Domain.Companies;
+using CraftersCloud.Blueprint.Domain.Tests.Companies;
 using CraftersCloud.Blueprint.Domain.Users;
 using FluentAssertions;
 
@@ -10,14 +12,19 @@ public class UserQueryableExtensionsFixture
     private IQueryable<User> _query = null!;
     private User _user = null!;
     private User _user2 = null!;
+    private Company _company = null!;
+   // private Guid companyId = Guid.Empty; 
 
     [SetUp]
     public void Setup()
     {
+        
+        _company = new CompanyBuilder().WithName("company1");
         _user = new UserBuilder()
             .WithEmailAddress("emailAddress1")
             .WithFullName("name")
-            .WithRoleId(Role.SystemAdminRoleId);
+            .WithRoleId(Role.SystemAdminRoleId)
+            .WithCompany(_company.Id);
         _user2 = new UserBuilder()
             .WithEmailAddress("emailAddress2")
             .WithFullName("name2")
@@ -44,5 +51,11 @@ public class UserQueryableExtensionsFixture
         var result = _query.QueryByEmailAddress(emailAddress).ToList();
 
         result.Count.Should().Be(expectedCount);
+    }
+
+    [TestCase("")]
+    public void TestQueryByCompanyId(Guid companyId, int expectedCount)
+    {
+
     }
 }
