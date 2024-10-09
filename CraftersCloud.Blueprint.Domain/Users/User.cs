@@ -37,6 +37,7 @@ public class User : EntityWithCreatedUpdated
         FullName = command.FullName;
         RoleId = command.RoleId;
         UserStatusId = command.UserStatusId;
+        CompanyId = command.CompanyId;
         AddDomainEvent(new UserUpdatedDomainEvent(EmailAddress));
     }
 

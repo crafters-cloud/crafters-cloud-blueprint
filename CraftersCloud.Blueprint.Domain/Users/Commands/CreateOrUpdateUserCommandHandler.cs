@@ -10,14 +10,14 @@ namespace CraftersCloud.Blueprint.Domain.Users.Commands;
 
 [UsedImplicitly]
 public class CreateOrUpdateUserCommandHandler
-    (IRepository<User, Guid> userRepository, IRepository<Company, Guid> companyRepository
-    /*IQueryable<Company> companies*/) : IRequestHandler<CreateOrUpdateUser.Command, User>
+    (IRepository<User, Guid> userRepository, IRepository<Company, Guid> companyRepository) : IRequestHandler<CreateOrUpdateUser.Command, User>
 {
     public async Task<User> Handle(CreateOrUpdateUser.Command request,
         CancellationToken cancellationToken)
     {
         // todo if company by name does not exist, create it and assign it to the user
-        var company = await companyRepository.QueryAll().QueryById(request.CompanyId.GetValueOrDefault()).SingleOrDefaultAsync(cancellationToken: cancellationToken);
+        //var company = await companyRepository.QueryAll().QueryById(request.CompanyId.GetValueOrDefault()).SingleOrDefaultAsync(cancellationToken: cancellationToken);
+        var company = await companyRepository.QueryAll().QueryByNameExact(request.CompanyName).SingleOrDefaultAsync(cancellationToken);
         if (request.CompanyName.HasContent() && company == null)
         {
             var command = new CreateOrUpdateCompany.Command
@@ -28,6 +28,8 @@ public class CreateOrUpdateUserCommandHandler
             company = Company.Create(command);
             companyRepository.Add(company);
         }
+
+        //todo: if the request has name of existing company, but no company id
         
         User? user;
         if (request.Id.HasValue)
