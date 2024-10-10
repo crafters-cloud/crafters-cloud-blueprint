@@ -29,7 +29,7 @@ public class Company : EntityWithCreatedUpdated
         AddDomainEvent(new CompanyUpdatedDomainEvent(Name));
     }
 
-    public void Delete(DeleteCompany.Command command)
+    public void Delete(RemoveCompany.Command command)
     {
 
     }
