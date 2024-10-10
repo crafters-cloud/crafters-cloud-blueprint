@@ -45,7 +45,7 @@ public class CompaniesController(IUnitOfWork unitOfWork, IMediator mediator) : C
     }
 
     [HttpDelete]
-    [Route("{id:quid}")]
+    [Route("{id:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [UserHasPermission(PermissionId.CompaniesDelete)]
     public async Task Remove(Guid id)
