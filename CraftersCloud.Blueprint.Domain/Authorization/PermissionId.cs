@@ -7,5 +7,8 @@ public enum PermissionId
     UsersWrite = 2,
     ProductsRead = 10,
     ProductsWrite = 11,
-    ProductsDelete = 12
+    ProductsDelete = 12,
+    CompaniesRead = 100,
+    CompaniesWrite = 101,
+    CompaniesDelete = 102,
 }

@@ -1,5 +1,6 @@
 ﻿using CraftersCloud.Blueprint.Core.Entities;
 using CraftersCloud.Blueprint.Domain.Authorization;
+using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
 using CraftersCloud.Blueprint.Domain.Users.DomainEvents;
 
@@ -16,13 +17,15 @@ public class User : EntityWithCreatedUpdated
     public Role Role { get; private set; } = null!;
     public UserStatusId UserStatusId { get; private set; } = null!;
     public UserStatus UserStatus { get; private set; } = null!;
+    public Guid? CompanyId { get; private set; }
+    public Company? Company { get; private set; }
 
     public static User Create(CreateOrUpdateUser.Command command)
     {
         var result = new User
         {
-            EmailAddress = command.EmailAddress, FullName = command.FullName, RoleId = command.RoleId, UserStatusId = command.UserStatusId
-        };
+            EmailAddress = command.EmailAddress, FullName = command.FullName, RoleId = command.RoleId, UserStatusId = command.UserStatusId, CompanyId = command.CompanyId
+        };  
 
         result.AddDomainEvent(new UserCreatedDomainEvent(result.EmailAddress));
         return result;
@@ -33,6 +36,7 @@ public class User : EntityWithCreatedUpdated
         FullName = command.FullName;
         RoleId = command.RoleId;
         UserStatusId = command.UserStatusId;
+        CompanyId = command.CompanyId;
         AddDomainEvent(new UserUpdatedDomainEvent(EmailAddress));
     }
 

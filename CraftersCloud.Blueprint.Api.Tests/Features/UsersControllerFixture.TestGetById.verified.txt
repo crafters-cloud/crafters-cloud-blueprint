@@ -7,5 +7,7 @@
   UpdatedOn: DateTimeOffset_1,
   UserStatusId: Active,
   UserStatusName: Active,
-  UserStatusDescription: Active Status Description
+  UserStatusDescription: Active Status Description,
+  CompanyId: Guid_3,
+  CompanyName: FirstCompany
 }

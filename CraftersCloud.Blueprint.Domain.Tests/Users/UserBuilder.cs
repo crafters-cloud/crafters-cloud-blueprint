@@ -1,4 +1,5 @@
-﻿using CraftersCloud.Blueprint.Domain.Users;
+﻿using CraftersCloud.Blueprint.Domain.Companies;
+using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
 using CraftersCloud.Core.Entities;
 
@@ -11,10 +12,17 @@ public class UserBuilder
     private string _emailAddress = string.Empty;
     private Guid _id = SequentialGuidGenerator.Generate();
     private UserStatusId _statusId = UserStatusId.Active;
+    private Guid? _companyId;
 
     public UserBuilder WithEmailAddress(string value)
     {
         _emailAddress = value;
+        return this;
+    }
+
+    public UserBuilder WithCompany(Guid value)
+    {
+        _companyId = value;
         return this;
     }
 
@@ -41,6 +49,8 @@ public class UserBuilder
         _statusId = value;
         return this;
     }
+    
+
 
     public static implicit operator User(UserBuilder builder) => ToUser(builder);
 
@@ -54,9 +64,12 @@ public class UserBuilder
             FullName = _fullName,
             EmailAddress = _emailAddress,
             RoleId = _roleId,
-            UserStatusId = _statusId
+            UserStatusId = _statusId,
+            CompanyId = _companyId
         });
 
         return result;
     }
+
+
 }

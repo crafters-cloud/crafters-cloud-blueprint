@@ -13,7 +13,7 @@
     <IncludeContentInPack>true</IncludeContentInPack>
     <NoDefaultExcludes>true</NoDefaultExcludes>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-<!--    <PackageIcon>icon-192x192.png</PackageIcon>-->
+    <!--    <PackageIcon>icon-192x192.png</PackageIcon>-->
     <PackageId>CraftersCloud.Blueprint.Template</PackageId>
     <PackageProjectUrl>https://https://github.com/crafters-cloud/crafters-cloud-blueprint</PackageProjectUrl>
     <PackageTags>CraftersCloud;Blueprint;dotnet-new;template</PackageTags>
@@ -498,12 +498,12 @@
     <None Remove="cleanup.cmd"/>
   </ItemGroup>
 
-<!--  <ItemGroup>-->
-<!--    <None Include="icon-192x192.png">-->
-<!--      <Pack>True</Pack>-->
-<!--      <PackagePath></PackagePath>-->
-<!--    </None>-->
-<!--  </ItemGroup>-->
+  <!--  <ItemGroup>-->
+  <!--    <None Include="icon-192x192.png">-->
+  <!--      <Pack>True</Pack>-->
+  <!--      <PackagePath></PackagePath>-->
+  <!--    </None>-->
+  <!--  </ItemGroup>-->
 
   <ItemGroup>
     <PackageReference Include="MinVer">
