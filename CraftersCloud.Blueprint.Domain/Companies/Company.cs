@@ -29,8 +29,8 @@ public class Company : EntityWithCreatedUpdated
         AddDomainEvent(new CompanyUpdatedDomainEvent(Name));
     }
 
-    public void Delete(RemoveCompany.Command command)
+    public void Remove(RemoveCompany.Command command)
     {
-
+        Id = command.Id;
     }
 }
