@@ -11,4 +11,7 @@ public enum PermissionId
     CompaniesRead = 100,
     CompaniesWrite = 101,
     CompaniesDelete = 102,
+    CategoriesRead = 200,
+    CategoriesWrite = 201,
+    CategoriesDelete = 202
 }
