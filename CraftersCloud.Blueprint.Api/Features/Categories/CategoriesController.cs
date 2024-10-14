@@ -20,14 +20,14 @@ public class CategoriesController(
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [UserHasPermission(PermissionId.CategoriesRead)]
-    public async Task<ActionResult<PagedResponse<GetCategories.Response.Item>>> 
-        Search([FromQuery]GetCategories.Request query)
+    public async Task<ActionResult<PagedResponse<GetCategories.Response.Item>>> Search([FromQuery]GetCategories.Request query)
     {
         var response = await mediator.Send(query);
         return response.ToActionResult();
     }
 
     [HttpGet]
+    [Route("{id:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [UserHasPermission(PermissionId.CategoriesRead)]

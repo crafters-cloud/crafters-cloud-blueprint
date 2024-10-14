@@ -36,8 +36,7 @@ public static class GetCompanies
     }
 
     [UsedImplicitly]
-    public class RequestHandler(IRepository<Company> repository, IMapper mapper)
-        : IPagedRequestHandler<Request, Response.Item>
+    public class RequestHandler(IRepository<Company> repository, IMapper mapper) : IPagedRequestHandler<Request, Response.Item>
     {
         public async Task<PagedResponse<Response.Item>> Handle(Request request, CancellationToken cancellationToken) =>
             await repository.QueryAll()

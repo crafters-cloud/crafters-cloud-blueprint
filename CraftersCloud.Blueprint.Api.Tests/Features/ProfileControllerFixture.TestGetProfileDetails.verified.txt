@@ -10,6 +10,9 @@
     ProductsDelete,
     CompaniesRead,
     CompaniesWrite,
-    CompaniesDelete
+    CompaniesDelete,
+    CategoriesRead,
+    CategoriesWrite,
+    CategoriesDelete
   ]
 }

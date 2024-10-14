@@ -13,7 +13,7 @@ namespace CraftersCloud.Blueprint.Api.Features.Categories
         [PublicAPI]
         public class Request : PagedRequest<Response.Item>
         {
-            public required string Name { get; set; }
+            public string? Name { get; set; }
         }
 
         [PublicAPI]
@@ -36,12 +36,12 @@ namespace CraftersCloud.Blueprint.Api.Features.Categories
         }
 
         [UsedImplicitly]
-        public class RequestHandler(IRepository<Category> repository, IMapper mapper) 
-            : IPagedRequestHandler<Request, Response.Item>
+        public class RequestHandler(IRepository<Category> repository, IMapper mapper) : IPagedRequestHandler<Request, Response.Item>
         {   
-            public async Task<PagedResponse<Response.Item>> Handle
-                (Request request, CancellationToken cancellationToken) =>
-                await repository.QueryAll().QueryByName(request.Name)
+            public async Task<PagedResponse<Response.Item>> Handle(Request request, CancellationToken cancellationToken) =>
+                await repository
+                    .QueryAll()
+                    .QueryByName(request.Name)
                     .ProjectTo<Response.Item>(mapper.ConfigurationProvider, cancellationToken)
                     .ToPagedResponseAsync(request, cancellationToken);
         }
