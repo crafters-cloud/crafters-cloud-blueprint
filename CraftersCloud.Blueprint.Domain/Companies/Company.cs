@@ -12,7 +12,8 @@ public class Company : EntityWithCreatedUpdated
     public string Name { get; private set; } = string.Empty;
     private readonly IList<User> _users = [];
     public IReadOnlyCollection<User> Users => _users.AsReadOnly();
-
+    private readonly IList<UserCompanyHistories> _userCompanyHistories = [];
+    public IReadOnlyCollection<UserCompanyHistories> UserCompanyHistories => _userCompanyHistories.AsReadOnly();
     public static Company Create(CreateOrUpdateCompany.Command command) => Create(command.Name);
 
     public static Company Create(string companyName)

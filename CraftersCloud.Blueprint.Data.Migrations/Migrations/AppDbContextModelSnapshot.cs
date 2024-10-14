@@ -269,6 +269,27 @@ namespace CraftersCloud.Blueprint.Data.Migrations.Migrations
                     b.ToTable("Product");
                 });
 
+            modelBuilder.Entity("CraftersCloud.Blueprint.Domain.UserCompanyHistories", b =>
+                {
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateOnly>("EnrollmentDate")
+                        .HasColumnType("date");
+
+                    b.Property<DateTimeOffset>("EnrollmentDateTime")
+                        .HasColumnType("datetimeoffset");
+
+                    b.HasKey("CompanyId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserCompanyHistories");
+                });
+
             modelBuilder.Entity("CraftersCloud.Blueprint.Domain.Users.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -474,6 +495,25 @@ namespace CraftersCloud.Blueprint.Data.Migrations.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("CraftersCloud.Blueprint.Domain.UserCompanyHistories", b =>
+                {
+                    b.HasOne("CraftersCloud.Blueprint.Domain.Companies.Company", "Company")
+                        .WithMany("UserCompanyHistories")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CraftersCloud.Blueprint.Domain.Users.User", "User")
+                        .WithMany("UserCompanyHistories")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("CraftersCloud.Blueprint.Domain.Users.User", b =>
                 {
                     b.HasOne("CraftersCloud.Blueprint.Domain.Companies.Company", "Company")
@@ -534,7 +574,14 @@ namespace CraftersCloud.Blueprint.Data.Migrations.Migrations
 
             modelBuilder.Entity("CraftersCloud.Blueprint.Domain.Companies.Company", b =>
                 {
+                    b.Navigation("UserCompanyHistories");
+
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("CraftersCloud.Blueprint.Domain.Users.User", b =>
+                {
+                    b.Navigation("UserCompanyHistories");
                 });
 #pragma warning restore 612, 618
         }

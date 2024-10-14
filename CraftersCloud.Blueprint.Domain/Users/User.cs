@@ -20,6 +20,9 @@ public class User : EntityWithCreatedUpdated
     public Guid? CompanyId { get; private set; }
     public Company? Company { get; private set; }
 
+    private readonly IList<UserCompanyHistories> _userCompanyHistories = [];
+    public IReadOnlyCollection<UserCompanyHistories> UserCompanyHistories => _userCompanyHistories.AsReadOnly();
+
     public static User Create(CreateOrUpdateUser.Command command)
     {
         var result = new User
