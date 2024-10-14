@@ -13,7 +13,7 @@ namespace CraftersCloud.Blueprint.Api.Features.Categories;
 
 [Produces(MediaTypeNames.Application.Json)]
 [Route("api/[controller]")]
-public class CatgoriesController(
+public class CategoriesController(
     IUnitOfWork unitOfWork,
     IMediator mediator) : Controller
 {
