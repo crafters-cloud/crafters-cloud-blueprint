@@ -13,4 +13,8 @@
     <ProjectReference Include="..\CraftersCloud.Blueprint.Core\CraftersCloud.Blueprint.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UserCompanyHistories\" />
+  </ItemGroup>
+
 </Project>
