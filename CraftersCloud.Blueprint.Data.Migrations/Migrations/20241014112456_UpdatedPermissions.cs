@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CraftersCloud.Blueprint.Data.Migrations.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdatedUermissions : Migration
+    public partial class UpdatedPermissions : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

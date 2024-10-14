@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CraftersCloud.Blueprint.Data.Migrations.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241014112456_UpdatedUermissions")]
-    partial class UpdatedUermissions
+    [Migration("20241014112456_UpdatedPermissions")]
+    partial class UpdatedPermissions
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
