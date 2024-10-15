@@ -9,5 +9,15 @@
   UserStatusName: Inactive,
   UserStatusDescription: Inactive Status Description,
   CompanyId: Guid_3,
-  CompanyName: Second Company
+  CompanyName: Second Company,
+  UserCompanyHistories: [
+    {
+      CompanyName: Second Company,
+      EnrollmentDate: Date_1
+    },
+    {
+      CompanyName: FirstCompany,
+      EnrollmentDate: Date_1
+    }
+  ]
 }

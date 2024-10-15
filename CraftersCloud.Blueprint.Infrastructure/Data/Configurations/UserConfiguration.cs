@@ -24,20 +24,6 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.HasOne(u => u.Role).WithMany(x => x.Users).OnDelete(DeleteBehavior.NoAction);
         builder.HasOne(u => u.Company).WithMany(x => x.Users).OnDelete(DeleteBehavior.NoAction);
 
-        //builder
-        //    .HasMany(u => u.CompanyHistory)
-        //    .WithMany(u => u.Users)
-        //    .UsingEntity<UserCompany>(
-        //        right => right
-        //            .HasOne<Company>()
-        //            .WithMany()
-        //            .HasForeignKey(x => x.CompanyId),
-        //        left => left
-        //            .HasOne<User>()
-        //            .WithMany()
-        //            .HasForeignKey(x => x.UserId)
-        //    );
-
         builder.HasCreatedByAndUpdatedBy();
     }
 }

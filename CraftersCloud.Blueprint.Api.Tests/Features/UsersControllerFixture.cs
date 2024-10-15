@@ -1,5 +1,4 @@
-﻿using Azure;
-using CraftersCloud.Blueprint.Api.Features;
+﻿using CraftersCloud.Blueprint.Api.Features;
 using CraftersCloud.Blueprint.Api.Features.Users;
 using CraftersCloud.Blueprint.Api.Tests.Infrastructure.Api;
 using CraftersCloud.Blueprint.Domain.Authorization;
@@ -9,7 +8,6 @@ using CraftersCloud.Blueprint.Domain.Tests.Users;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
 using CraftersCloud.Core.AspNetCore.Tests.SystemTextJson.Http;
-using CraftersCloud.Core.Entities;
 using CraftersCloud.Core.Paging;
 
 namespace CraftersCloud.Blueprint.Api.Tests.Features;

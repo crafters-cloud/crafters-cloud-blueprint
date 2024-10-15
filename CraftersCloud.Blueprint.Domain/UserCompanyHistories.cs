@@ -5,10 +5,10 @@ namespace CraftersCloud.Blueprint.Domain;
 
 public class UserCompanyHistories
 {
-    public Guid? UserId { get; set; }
-    public Guid? CompanyId { get; set; }
-    public User User { get; set; } = null!;
-    public Company Company { get; set; } = null!;
-    public DateOnly EnrollmentDate { get; set; }
-    public DateTimeOffset EnrollmentDateTime { get; set; }
+    public Guid? UserId { get; init; }
+    public Guid? CompanyId { get; init; }
+    public User User { get; init; } = null!;
+    public Company Company { get; init; } = null!;
+    public DateOnly EnrollmentDate { get; init; }
+    public DateTimeOffset EnrollmentDateTime { get; init; }
 }

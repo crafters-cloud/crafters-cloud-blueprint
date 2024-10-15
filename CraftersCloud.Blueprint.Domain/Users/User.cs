@@ -1,12 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using CraftersCloud.Blueprint.Core.Entities;
-using CraftersCloud.Blueprint.Domain;
+﻿using CraftersCloud.Blueprint.Core.Entities;
 using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
 using CraftersCloud.Blueprint.Domain.Users.DomainEvents;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using static CraftersCloud.Blueprint.Domain.Products.Commands.ProductCreateOrUpdate;
 
 namespace CraftersCloud.Blueprint.Domain.Users;
 
@@ -34,6 +30,7 @@ public class User : EntityWithCreatedUpdated
             EmailAddress = command.EmailAddress, FullName = command.FullName, RoleId = command.RoleId, UserStatusId = command.UserStatusId, CompanyId = command.CompanyId
         };
 
+        if (result.CompanyId != null) result.UpdateUserCompanyHistories(command.CompanyId);
         result.AddDomainEvent(new UserCreatedDomainEvent(result.EmailAddress));
         return result;
     }
@@ -55,7 +52,7 @@ public class User : EntityWithCreatedUpdated
         AddDomainEvent(new UserUpdatedDomainEvent(EmailAddress));
     }
 
-    public void UpdateUserCompanyHistories(Guid? companyId) => UserCompanyHistories.Add(new UserCompanyHistories()
+    private void UpdateUserCompanyHistories(Guid? companyId) => UserCompanyHistories.Add(new UserCompanyHistories()
     {
         CompanyId = companyId,
         UserId = Id,
