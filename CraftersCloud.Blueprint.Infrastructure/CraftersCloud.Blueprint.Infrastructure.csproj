@@ -1,49 +1,49 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <PackageReference Include="Autofac"/>
-    <PackageReference Include="Automapper"/>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection"/>
-    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets"/>
-    <PackageReference Include="CraftersCloud.Core.AspNetCore"/>
-    <PackageReference Include="CraftersCloud.Core.Infrastructure"/>
-    <PackageReference Include="CraftersCloud.Core.EntityFramework"/>
-    <PackageReference Include="CraftersCloud.Core.EntityFramework.Infrastructure"/>
-    <PackageReference Include="CraftersCloud.Core.MediatR"/>
-    <PackageReference Include="CraftersCloud.Core.SmartEnums.EntityFramework"/>
-    <PackageReference Include="CraftersCloud.Core.SmartEnums.Swagger"/>
-    <PackageReference Include="CraftersCloud.Core.SmartEnums.SystemTextJson"/>
-    <PackageReference Include="CraftersCloud.Core.Swagger"/>
-    <PackageReference Include="FluentValidation.DependencyInjectionExtensions"/>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection"/>
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore"/>
-    <PackageReference Include="Microsoft.Extensions.Http.Polly"/>
-    <PackageReference Include="Microsoft.Identity.Web"/>
+    <PackageReference Include="Autofac" />
+    <PackageReference Include="Automapper" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" />
+    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" />
+    <PackageReference Include="CraftersCloud.Core.AspNetCore" />
+    <PackageReference Include="CraftersCloud.Core.Infrastructure" />
+    <PackageReference Include="CraftersCloud.Core.EntityFramework" />
+    <PackageReference Include="CraftersCloud.Core.EntityFramework.Infrastructure" />
+    <PackageReference Include="CraftersCloud.Core.MediatR" />
+    <PackageReference Include="CraftersCloud.Core.SmartEnums.EntityFramework" />
+    <PackageReference Include="CraftersCloud.Core.SmartEnums.Swagger" />
+    <PackageReference Include="CraftersCloud.Core.SmartEnums.SystemTextJson" />
+    <PackageReference Include="CraftersCloud.Core.Swagger" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" />
+    <PackageReference Include="Microsoft.Identity.Web" />
     <PackageReference Include="MinVer">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Polly"/>
-    <PackageReference Include="Serilog.AspNetCore"/>
-    <PackageReference Include="Serilog.Enrichers.Environment"/>
-    <PackageReference Include="Serilog.Enrichers.Process"/>
-    <PackageReference Include="Serilog.Enrichers.Thread"/>
-    <PackageReference Include="Serilog.Extensions.Logging"/>
-    <PackageReference Include="Serilog.Settings.Configuration"/>
-    <PackageReference Include="Serilog.Sinks.ApplicationInsights"/>
-    <PackageReference Include="Serilog.Sinks.Console"/>
-    <PackageReference Include="Serilog.Sinks.File"/>
+    <PackageReference Include="Polly" />
+    <PackageReference Include="Serilog.AspNetCore" />
+    <PackageReference Include="Serilog.Enrichers.Environment" />
+    <PackageReference Include="Serilog.Enrichers.Process" />
+    <PackageReference Include="Serilog.Enrichers.Thread" />
+    <PackageReference Include="Serilog.Extensions.Logging" />
+    <PackageReference Include="Serilog.Settings.Configuration" />
+    <PackageReference Include="Serilog.Sinks.ApplicationInsights" />
+    <PackageReference Include="Serilog.Sinks.Console" />
+    <PackageReference Include="Serilog.Sinks.File" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.ApplicationServices\CraftersCloud.Blueprint.ApplicationServices.csproj"/>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Core\CraftersCloud.Blueprint.Core.csproj"/>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Domain\CraftersCloud.Blueprint.Domain.csproj"/>
+    <ProjectReference Include="..\CraftersCloud.Blueprint.ApplicationServices\CraftersCloud.Blueprint.ApplicationServices.csproj" />
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Core\CraftersCloud.Blueprint.Core.csproj" />
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Domain\CraftersCloud.Blueprint.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="CraftersCloud.Blueprint.Api"/>
-    <InternalsVisibleTo Include="CraftersCloud.Blueprint.Api.Tests"/>
-    <InternalsVisibleTo Include="CraftersCloud.Core.Blueprint.Scheduler.Tests"/>
+    <InternalsVisibleTo Include="CraftersCloud.Blueprint.Api" />
+    <InternalsVisibleTo Include="CraftersCloud.Blueprint.Api.Tests" />
+    <InternalsVisibleTo Include="CraftersCloud.Core.Blueprint.Scheduler.Tests" />
   </ItemGroup>
 
 </Project>

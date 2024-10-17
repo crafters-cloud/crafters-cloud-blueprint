@@ -22,6 +22,7 @@ public class CreateOrUpdateUserCommandHandler : IRequestHandler<CreateOrUpdateUs
             {
                 throw new InvalidOperationException("missing user");
             }
+
             user.Update(request);
         }
         else

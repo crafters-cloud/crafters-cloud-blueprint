@@ -11,7 +11,7 @@ public class UserQueryableExtensionsFixture
     private User _user = null!;
     private User _user2 = null!;
 
-    [SetUp]
+    [Before(Test)]
     public void Setup()
     {
         _user = new UserBuilder()
@@ -33,11 +33,12 @@ public class UserQueryableExtensionsFixture
         result.Should().BeEmpty();
     }
 
-    [TestCase("emailAddress1", 1, TestName = "Case sensitive-should find")]
-    [TestCase("emailAddress2", 1, TestName = "Case sensitive-should find, v2")]
-    [TestCase("EmailAddress1", 0, TestName = "Case sensitive-should not find")]
-    [TestCase("EmailAddress2", 0, TestName = "Case sensitive-should not find, v2")]
-    [TestCase("xyz", 0, TestName = "Should not find")]
+    [Test]
+    [Arguments("emailAddress1", 1)]
+    [Arguments("emailAddress2", 1)]
+    [Arguments("EmailAddress1", 0)]
+    [Arguments("EmailAddress2", 0)]
+    [Arguments("xyz", 0)]
     public void TestQueryByEmailAddress(string emailAddress, int expectedCount)
     {
         //change to use expectedCount instead of Verify

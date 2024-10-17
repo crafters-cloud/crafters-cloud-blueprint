@@ -1,12 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
   <ItemGroup>
-    <Content Include="..\CraftersCloud.Blueprint.Api\Resources\*.json" LinkBase="Resources"/>
+    <Content Include="..\CraftersCloud.Blueprint.Api\Resources\*.json" LinkBase="Resources" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Resources\**"/>
-    <EmbeddedResource Remove="Resources\**"/>
-    <None Remove="Resources\**"/>
+    <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <None Remove="Resources\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,24 +19,20 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing"/>
-    <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
     <PackageReference Include="MinVer">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="NUnit3TestAdapter">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Verify.NUnit"/>
+    <PackageReference Include="TUnit" />
+    <PackageReference Include="Verify.TUnit" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Api\CraftersCloud.Blueprint.Api.csproj"/>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Data.Migrations\CraftersCloud.Blueprint.Data.Migrations.csproj"/>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Domain.Tests\CraftersCloud.Blueprint.Domain.Tests.csproj"/>
-    <ProjectReference Include="..\CraftersCloud.Blueprint.Infrastructure.Tests\CraftersCloud.Blueprint.Infrastructure.Tests.csproj"/>
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Api\CraftersCloud.Blueprint.Api.csproj" />
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Data.Migrations\CraftersCloud.Blueprint.Data.Migrations.csproj" />
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Domain.Tests\CraftersCloud.Blueprint.Domain.Tests.csproj" />
+    <ProjectReference Include="..\CraftersCloud.Blueprint.Infrastructure.Tests\CraftersCloud.Blueprint.Infrastructure.Tests.csproj" />
   </ItemGroup>
 
   <ItemGroup>

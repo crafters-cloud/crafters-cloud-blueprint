@@ -19,7 +19,9 @@ public static class MvcStartupExtensions
                 converters.AppRegisterJsonConverters();
             });
 
-    private static void ConfigureMvc(this MvcOptions options) => options.Filters.Add(new CancelSavingTransactionAttribute());
+    private static void ConfigureMvc(this MvcOptions options) =>
+        options.Filters.Add(new CancelSavingTransactionAttribute());
 
-    public static void AppRegisterJsonConverters(this IList<JsonConverter> converters) => converters.AddCoreSmartEnumJsonConverters([AssemblyFinder.ApiAssembly, AssemblyFinder.DomainAssembly]);
+    public static void AppRegisterJsonConverters(this IList<JsonConverter> converters) =>
+        converters.AddCoreSmartEnumJsonConverters([AssemblyFinder.ApiAssembly, AssemblyFinder.DomainAssembly]);
 }
