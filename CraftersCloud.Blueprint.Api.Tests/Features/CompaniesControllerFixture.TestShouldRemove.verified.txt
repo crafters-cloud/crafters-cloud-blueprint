@@ -4,11 +4,5 @@
     Name: Company Name 1,
     CreatedOn: DateTimeOffset_1,
     UpdatedOn: DateTimeOffset_1
-  },
-  {
-    Id: Guid_2,
-    Name: Company Name 2,
-    CreatedOn: DateTimeOffset_1,
-    UpdatedOn: DateTimeOffset_1
   }
 ]

@@ -9,5 +9,11 @@
   UserStatusName: Active,
   UserStatusDescription: Active Status Description,
   CompanyId: Guid_3,
-  CompanyName: another company name
+  CompanyName: another company name,
+  UserCompanyHistories: [
+    {
+      CompanyName: another company name,
+      EnrollmentDate: Date_1
+    }
+  ]
 }

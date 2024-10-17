@@ -1,4 +1,5 @@
-﻿using CraftersCloud.Blueprint.Domain.Users;
+﻿using CraftersCloud.Blueprint.Domain.Companies;
+using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Core.SmartEnums.EntityFramework;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
