@@ -1,4 +1,5 @@
 ﻿using CraftersCloud.Blueprint.Domain.Authorization;
+using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Core.EntityFramework.Seeding;
 using Microsoft.EntityFrameworkCore;

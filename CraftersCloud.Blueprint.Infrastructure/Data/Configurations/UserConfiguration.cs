@@ -1,4 +1,5 @@
-﻿using CraftersCloud.Blueprint.Domain.Users;
+﻿using CraftersCloud.Blueprint.Domain.Companies;
+using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Core.SmartEnums.EntityFramework;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
@@ -19,8 +20,10 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.HasIndex(u => u.EmailAddress).IsUnique();
 
         builder.HasReferenceTableRelationWithEnumAsForeignKey(x => x.UserStatus, x => x.UserStatusId);
-
+        
         builder.HasOne(u => u.Role).WithMany(x => x.Users).OnDelete(DeleteBehavior.NoAction);
+        builder.HasOne(u => u.Company).WithMany(x => x.Users).OnDelete(DeleteBehavior.NoAction);
+
         builder.HasCreatedByAndUpdatedBy();
     }
 }

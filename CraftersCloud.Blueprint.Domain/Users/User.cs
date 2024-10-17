@@ -1,5 +1,6 @@
 ﻿using CraftersCloud.Blueprint.Core.Entities;
 using CraftersCloud.Blueprint.Domain.Authorization;
+using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
 using CraftersCloud.Blueprint.Domain.Users.DomainEvents;
 
@@ -16,23 +17,31 @@ public class User : EntityWithCreatedUpdated
     public Role Role { get; private set; } = null!;
     public UserStatusId UserStatusId { get; private set; } = null!;
     public UserStatus UserStatus { get; private set; } = null!;
+    public Guid? CompanyId { get; private set; }
+    public Company? Company { get; private set; }
+
+    private readonly IList<UserCompanyHistory> _userCompanyHistories = [];
+    public ICollection<UserCompanyHistory> UserCompanyHistories => _userCompanyHistories;
 
     public static User Create(CreateOrUpdateUser.Command command)
     {
         var result = new User
         {
-            EmailAddress = command.EmailAddress, FullName = command.FullName, RoleId = command.RoleId, UserStatusId = command.UserStatusId
+            EmailAddress = command.EmailAddress, FullName = command.FullName, RoleId = command.RoleId, UserStatusId = command.UserStatusId, CompanyId = command.CompanyId
         };
 
+        if (result.CompanyId != null) result.UpdateUserCompanyHistories(command.CompanyId);
         result.AddDomainEvent(new UserCreatedDomainEvent(result.EmailAddress));
         return result;
     }
 
     public void Update(CreateOrUpdateUser.Command command)
     {
+        if (CompanyId != command.CompanyId) UpdateUserCompanyHistories(command.CompanyId);
         FullName = command.FullName;
         RoleId = command.RoleId;
         UserStatusId = command.UserStatusId;
+        CompanyId = command.CompanyId;
         AddDomainEvent(new UserUpdatedDomainEvent(EmailAddress));
     }
 
@@ -42,6 +51,14 @@ public class User : EntityWithCreatedUpdated
         Role = role;
         AddDomainEvent(new UserUpdatedDomainEvent(EmailAddress));
     }
+
+    private void UpdateUserCompanyHistories(Guid? companyId) => UserCompanyHistories.Add(new UserCompanyHistory()
+    {
+        CompanyId = companyId,
+        UserId = Id,
+        EnrollmentDate = DateOnly.FromDateTime(DateTime.Now),
+        EnrollmentDateTime = DateTimeOffset.Now
+    });
 
     public IReadOnlyCollection<PermissionId> GetPermissionIds() => Role.Permissions.Select(p => p.Id).ToArray();
 }

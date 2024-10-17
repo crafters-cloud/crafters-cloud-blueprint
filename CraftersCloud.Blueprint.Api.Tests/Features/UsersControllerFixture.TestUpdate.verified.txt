@@ -1,11 +1,23 @@
 ﻿{
   Id: Guid_1,
   EmailAddress: john_doe@john.doe,
-  FullName: some user,
+  FullName: some other user,
   RoleId: Guid_2,
   CreatedOn: DateTimeOffset_1,
   UpdatedOn: DateTimeOffset_1,
   UserStatusId: Inactive,
   UserStatusName: Inactive,
-  UserStatusDescription: Inactive Status Description
+  UserStatusDescription: Inactive Status Description,
+  CompanyId: Guid_3,
+  CompanyName: Second Company,
+  UserCompanyHistories: [
+    {
+      CompanyName: Second Company,
+      EnrollmentDate: Date_1
+    },
+    {
+      CompanyName: FirstCompany,
+      EnrollmentDate: Date_1
+    }
+  ]
 }

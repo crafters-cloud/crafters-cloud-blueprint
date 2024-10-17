@@ -7,6 +7,12 @@
     UsersWrite,
     ProductsRead,
     ProductsWrite,
-    ProductsDelete
+    ProductsDelete,
+    CompaniesRead,
+    CompaniesWrite,
+    CompaniesDelete,
+    CategoriesRead,
+    CategoriesWrite,
+    CategoriesDelete
   ]
 }

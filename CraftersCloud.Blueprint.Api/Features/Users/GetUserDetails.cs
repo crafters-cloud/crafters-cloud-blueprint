@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using CraftersCloud.Blueprint.Domain;
+using CraftersCloud.Blueprint.Domain.Companies;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Core.Data;
 using CraftersCloud.Core.Entities;
@@ -31,12 +33,26 @@ public static class GetUserDetails
         public UserStatusId UserStatusId { get; set; } = UserStatusId.Active;
         public string UserStatusName { get; set; } = string.Empty;
         public string UserStatusDescription { get; set; } = string.Empty;
+        public Guid? CompanyId {  get; set; }
+        public string CompanyName { get; set; } = string.Empty;
+        public ICollection<UserCompanyHistoryResponse> UserCompanyHistories { get; set; } = [];
     }
+
+    public class UserCompanyHistoryResponse
+    {
+        public string CompanyName { get; set; } = string.Empty;
+        public DateOnly EnrollmentDate { get; set; }
+    }
+
 
     [UsedImplicitly]
     public class MappingProfile : Profile
     {
-        public MappingProfile() => CreateMap<User, Response>();
+        public MappingProfile()
+        {
+            CreateMap<User, Response>();
+            CreateMap<UserCompanyHistory, UserCompanyHistoryResponse>();
+        }
     }
 
     [UsedImplicitly]
@@ -52,5 +68,10 @@ public static class GetUserDetails
         }
     }
 
-    private static IQueryable<User> BuildInclude(this IQueryable<User> query) => query.Include(x => x.UserStatus);
+    private static IQueryable<User> BuildInclude(this IQueryable<User> query)
+        => query
+            .Include(u => u.UserStatus)
+            .Include(u => u.Company)
+            .Include(u => u.UserCompanyHistories).ThenInclude(uch => uch.Company);
+
 }

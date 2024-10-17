@@ -2,6 +2,8 @@
 using CraftersCloud.Blueprint.Api.Features.Users;
 using CraftersCloud.Blueprint.Api.Tests.Infrastructure.Api;
 using CraftersCloud.Blueprint.Domain.Authorization;
+using CraftersCloud.Blueprint.Domain.Companies;
+using CraftersCloud.Blueprint.Domain.Tests.Companies;
 using CraftersCloud.Blueprint.Domain.Tests.Users;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
@@ -20,17 +22,21 @@ namespace CraftersCloud.Blueprint.Api.Tests.Features;
 public class UsersControllerFixture : IntegrationFixtureBase
 {
     private User _user = null!;
+    private Company _company = null!;
 
     [SetUp]
     public void SetUp()
     {
+        _company = new CompanyBuilder().WithName("FirstCompany").Build();
+
         _user = new UserBuilder()
             .WithEmailAddress("john_doe@john.doe")
             .WithFullName("John Doe")
+            .WithCompany(_company.Id)
             .WithRoleId(Role.SystemAdminRoleId)
             .WithStatusId(UserStatusId.Active);
-
-        AddAndSaveChanges(_user);
+        
+        AddAndSaveChanges(_user, _company);
     }
 
     [Test]
@@ -76,7 +82,8 @@ public class UsersControllerFixture : IntegrationFixtureBase
             FullName = "some user",
             EmailAddress = "someuser@test.com",
             RoleId = Role.SystemAdminRoleId,
-            UserStatusId = UserStatusId.Active
+            UserStatusId = UserStatusId.Active,
+            CompanyName = "another company name"
         };
         var user =
             await Client.PostAsync<CreateOrUpdateUser.Command, GetUserDetails.Response>("api/users", command);
@@ -90,10 +97,11 @@ public class UsersControllerFixture : IntegrationFixtureBase
         var command = new CreateOrUpdateUser.Command
         {
             Id = _user.Id,
-            FullName = "some user",
+            FullName = "some other user",
             EmailAddress = "someuser@test.com",
             RoleId = Role.SystemAdminRoleId,
-            UserStatusId = UserStatusId.Inactive
+            UserStatusId = UserStatusId.Inactive,
+            CompanyName = "Second Company"
         };
         var user =
             await Client.PostAsync<CreateOrUpdateUser.Command, GetUserDetails.Response>("api/users", command);
