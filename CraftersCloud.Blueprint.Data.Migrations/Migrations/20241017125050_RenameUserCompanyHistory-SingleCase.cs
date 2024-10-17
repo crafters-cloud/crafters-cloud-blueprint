@@ -40,6 +40,7 @@ namespace CraftersCloud.Blueprint.Data.Migrations.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+
             migrationBuilder.CreateIndex(
                 name: "IX_UserCompanyHistory_UserId",
                 table: "UserCompanyHistory",
