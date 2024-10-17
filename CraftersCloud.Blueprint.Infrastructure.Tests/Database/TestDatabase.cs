@@ -1,6 +1,7 @@
 ﻿using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Infrastructure.Data.Configurations;
+using CraftersCloud.Core.TestUtilities.Database;
 using Microsoft.EntityFrameworkCore;
 using Testcontainers.MsSql;
 
@@ -10,7 +11,9 @@ internal class TestDatabase
 {
     public string ConnectionString { get; }
     private static MsSqlContainer? _container;
-    private static readonly IEnumerable<string> TablesToIgnore = ["__EFMigrationsHistory", nameof(Role), nameof(RolePermission), nameof(Permission), nameof(UserStatus)];
+
+    private static readonly IEnumerable<string> TablesToIgnore =
+        ["__EFMigrationsHistory", nameof(Role), nameof(RolePermission), nameof(Permission), nameof(UserStatus)];
 
     public TestDatabase()
     {
@@ -49,7 +52,14 @@ internal class TestDatabase
         }
     }
 
-    public static Task ResetAsync(DbContext dbContext) => DatabaseInitializer.RecreateDatabaseAsync(dbContext, TablesToIgnore);
+    public static Task ResetAsync(DbContext dbContext) => DatabaseInitializer.RecreateDatabaseAsync(dbContext,
+        new DatabaseInitializerOptions
+        {
+            ResetDataOptions = new ResetDataOptions
+            {
+                TablesToIgnore = TablesToIgnore
+            }
+        });
 
     private static void WriteLine(string value) => TestContext.WriteLine(value);
 }

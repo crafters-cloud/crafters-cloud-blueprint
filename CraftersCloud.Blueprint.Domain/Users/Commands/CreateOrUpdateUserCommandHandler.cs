@@ -1,33 +1,28 @@
 ﻿using CraftersCloud.Core.Data;
+using CraftersCloud.Core.Entities;
+using CraftersCloud.Core.EntityFramework;
 using JetBrains.Annotations;
 using MediatR;
 
 namespace CraftersCloud.Blueprint.Domain.Users.Commands;
 
 [UsedImplicitly]
-public class CreateOrUpdateUserCommandHandler : IRequestHandler<CreateOrUpdateUser.Command, User>
+public class CreateOrUpdateUserCommandHandler(IRepository<User, Guid> userRepository)
+    : IRequestHandler<CreateOrUpdateUser.Command, User>
 {
-    private readonly IRepository<User, Guid> _userRepository;
-
-    public CreateOrUpdateUserCommandHandler(IRepository<User, Guid> userRepository) => _userRepository = userRepository;
-
     public async Task<User> Handle(CreateOrUpdateUser.Command request,
         CancellationToken cancellationToken)
     {
         User? user;
         if (request.Id.HasValue)
         {
-            user = await _userRepository.FindByIdAsync(request.Id.Value);
-            if (user == null)
-            {
-                throw new InvalidOperationException("missing user");
-            }
+            user = await userRepository.QueryAll().QueryById(request.Id.Value).SingleOrNotFoundAsync(cancellationToken);
             user.Update(request);
         }
         else
         {
             user = User.Create(request);
-            _userRepository.Add(user);
+            userRepository.Add(user);
         }
 
         return user;

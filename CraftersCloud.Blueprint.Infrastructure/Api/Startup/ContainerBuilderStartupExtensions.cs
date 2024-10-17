@@ -35,6 +35,7 @@ public static class ContainerBuilderStartupExtensions
         {
             throw new InvalidOperationException("HttpContext is null");
         }
+
         var user = httpContextAccessor.HttpContext.User;
         return user;
     }

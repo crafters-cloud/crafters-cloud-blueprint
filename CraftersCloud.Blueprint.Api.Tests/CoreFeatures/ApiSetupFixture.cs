@@ -6,7 +6,7 @@ using CraftersCloud.Blueprint.Domain.Authorization;
 using CraftersCloud.Blueprint.Domain.Tests.Users;
 using CraftersCloud.Blueprint.Domain.Users;
 using CraftersCloud.Blueprint.Domain.Users.Commands;
-using CraftersCloud.Core.AspNetCore.Tests.SystemTextJson.Http;
+using CraftersCloud.Core.AspNetCore.TestUtilities.Http;
 using CraftersCloud.Core.Paging;
 using FluentAssertions;
 
@@ -35,7 +35,8 @@ public class ApiSetupFixture : IntegrationFixtureBase
     public async Task TestGetAll()
     {
         var users = (await Client.GetAsync<PagedResponse<GetUsers.Response.Item>>(
-                new Uri("api/users", UriKind.RelativeOrAbsolute), new KeyValuePair<string, string>("SortBy", "EmailAddress")))
+                new Uri("api/users", UriKind.RelativeOrAbsolute),
+                new KeyValuePair<string, string>("SortBy", "EmailAddress")))
             ?.Items.ToList()!;
 
         await Verify(users);

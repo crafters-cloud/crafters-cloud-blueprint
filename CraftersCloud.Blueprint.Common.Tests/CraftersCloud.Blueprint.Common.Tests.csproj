@@ -4,7 +4,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="CraftersCloud.Core.AspNetCore.Tests.Utilities"/>
+    <PackageReference Include="CraftersCloud.Core.AspNetCore.TestUtilities"/>
     <PackageReference Include="CraftersCloud.Core.SmartEnums.VerifyTests"/>
     <PackageReference Include="FakeItEasy"/>
     <PackageReference Include="FluentAssertions"/>

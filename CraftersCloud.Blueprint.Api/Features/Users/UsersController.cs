@@ -55,7 +55,7 @@ public class UsersController(
     [UserHasPermission(PermissionId.UsersRead)]
     public async Task<ActionResult<IEnumerable<LookupResponse<Guid>>>> GetRolesLookup()
     {
-        var response = await mediator.Send(new GetRoleLookup.Request());
+        var response = await mediator.Send(new GetRolesLookup.Request());
         return response.ToActionResult();
     }
 

@@ -12,7 +12,8 @@ namespace CraftersCloud.Blueprint.Infrastructure.Api.Init;
 
 public static class SerilogStartupExtension
 {
-    public static LoggerConfiguration AppConfigureSerilog(this LoggerConfiguration loggerConfiguration, IConfiguration configuration)
+    public static LoggerConfiguration AppConfigureSerilog(this LoggerConfiguration loggerConfiguration,
+        IConfiguration configuration)
     {
         var loggerSectionExists = configuration.GetSection("Serilog").Exists();
         if (!loggerSectionExists)
@@ -20,6 +21,7 @@ public static class SerilogStartupExtension
             // we might not have logger section in the tests only
             return loggerConfiguration;
         }
+
         loggerConfiguration
             .ReadFrom.Configuration(configuration)
             .Enrich.FromLogContext()
@@ -35,15 +37,18 @@ public static class SerilogStartupExtension
         return loggerConfiguration;
     }
 
-    public static void AddAppInsightsToSerilog(this LoggerConfiguration loggerConfiguration, IConfiguration configuration, IServiceProvider serviceProvider)
+    public static void AddAppInsightsToSerilog(this LoggerConfiguration loggerConfiguration,
+        IConfiguration configuration, IServiceProvider serviceProvider)
     {
-        var settings = configuration.GetSection(ApplicationInsightsSettings.ApplicationInsightsSectionName).Get<ApplicationInsightsSettings>()!;
+        var settings = configuration.GetSection(ApplicationInsightsSettings.ApplicationInsightsSectionName)
+            .Get<ApplicationInsightsSettings>()!;
         if (!settings.ConnectionString.HasContent())
         {
             return;
         }
 
         var telemetryConfiguration = serviceProvider.GetRequiredService<TelemetryConfiguration>();
-        loggerConfiguration.WriteTo.ApplicationInsights(telemetryConfiguration, TelemetryConverter.Traces, LogEventLevel.Information);
+        loggerConfiguration.WriteTo.ApplicationInsights(telemetryConfiguration, TelemetryConverter.Traces,
+            LogEventLevel.Information);
     }
 }

@@ -1,5 +1,4 @@
-﻿using CraftersCloud.Blueprint.Infrastructure.Api.Security;
-using CraftersCloud.Core.Swagger;
+﻿using CraftersCloud.Core.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +11,8 @@ public static class SwaggerAuthenticationStartupExtensions
 {
     public static void AppUseSwaggerWithAzureAdAuth(this IApplicationBuilder app, IConfiguration configuration)
     {
-        var aadOptions = configuration.GetSection(AuthenticationStartupExtensions.AzureAdSection).Get<MicrosoftIdentityOptions>()!;
+        var aadOptions = configuration.GetSection(AuthenticationStartupExtensions.AzureAdSection)
+            .Get<MicrosoftIdentityOptions>()!;
         app.UseCoreSwaggerWithOAuth2Client(aadOptions.ClientId!, path: "/api");
     }
 
@@ -22,7 +22,8 @@ public static class SwaggerAuthenticationStartupExtensions
         string appVersion = "v1",
         Action<AspNetCoreOpenApiDocumentGeneratorSettings>? configureSettings = null)
     {
-        var aadOptions = configuration.GetSection(AuthenticationStartupExtensions.AzureAdSection).Get<MicrosoftIdentityOptions>()!;
+        var aadOptions = configuration.GetSection(AuthenticationStartupExtensions.AzureAdSection)
+            .Get<MicrosoftIdentityOptions>()!;
         var authorityUrl = $"{aadOptions.Instance}/{aadOptions.TenantId ?? aadOptions.Domain}";
 
         if (aadOptions.SignUpSignInPolicyId != null)

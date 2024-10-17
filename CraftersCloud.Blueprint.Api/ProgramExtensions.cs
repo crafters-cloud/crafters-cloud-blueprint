@@ -101,7 +101,7 @@ public static class ProgramExtensions
             IdentityModelEventSource.ShowPII = true;
         }
 
-        app.UsyCoreHttps(app.Environment);
+        app.UseCoreHttps(app.Environment);
         app.UseCoreExceptionHandler();
 
         app.UseAuthentication();

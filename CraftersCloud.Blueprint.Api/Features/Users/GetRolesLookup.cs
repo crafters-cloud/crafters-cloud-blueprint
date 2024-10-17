@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CraftersCloud.Blueprint.Api.Features.Users;
 
-public static class GetRoleLookup
+public static class GetRolesLookup
 {
     [PublicAPI]
     public class Request : LookupRequest<Guid>;

@@ -4,9 +4,11 @@ namespace CraftersCloud.Blueprint.Infrastructure.Tests;
 
 public static class DbContextExtensions
 {
-    public static IQueryable<T> QueryDbSkipCache<T>(this DbContext context) where T : class => context.Set<T>().AsNoTracking();
+    public static IQueryable<T> QueryDbSkipCache<T>(this DbContext context) where T : class =>
+        context.Set<T>().AsNoTracking();
 
-    public static async Task DeleteByIdsAndSaveChangesAsync<T, TId>(this DbContext context, params TId[] ids) where T : class
+    public static async Task DeleteByIdsAndSaveChangesAsync<T, TId>(this DbContext context, params TId[] ids)
+        where T : class
     {
         foreach (var id in ids)
         {
