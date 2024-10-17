@@ -3,7 +3,7 @@ using CraftersCloud.Blueprint.Domain.Users;
 
 namespace CraftersCloud.Blueprint.Domain;
 
-public class UserCompanyHistories
+public class UserCompanyHistory
 {
     public Guid? UserId { get; init; }
     public Guid? CompanyId { get; init; }

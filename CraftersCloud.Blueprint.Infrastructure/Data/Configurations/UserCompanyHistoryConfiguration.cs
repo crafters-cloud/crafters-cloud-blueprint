@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CraftersCloud.Blueprint.Infrastructure.Data.Configurations;
 
-public class UserCompanyHistoryConfiguration : IEntityTypeConfiguration<UserCompanyHistories>
+public class UserCompanyHistoryConfiguration : IEntityTypeConfiguration<UserCompanyHistory>
 {
-    public void Configure(EntityTypeBuilder<UserCompanyHistories> builder)
+    public void Configure(EntityTypeBuilder<UserCompanyHistory> builder)
     {
         builder.HasKey(c => new { c.CompanyId, c.UserId });
     }

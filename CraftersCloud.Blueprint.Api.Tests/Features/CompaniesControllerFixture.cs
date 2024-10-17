@@ -80,7 +80,6 @@ public class CompaniesControllerFixture : IntegrationFixtureBase
     [Test]
     public async Task TestShouldNotRemove()
     {
-        //var command = new RemoveCompany.Command { Id = _company1.Id };
         await Client.DeleteAsync($"api/companies/{_company1.Id}");
         var companies = (await Client.GetAsync<PagedResponse<GetCompanies.Response.Item>>(
                 new Uri("api/companies", UriKind.RelativeOrAbsolute),
@@ -92,7 +91,6 @@ public class CompaniesControllerFixture : IntegrationFixtureBase
     [Test]
     public async Task TestShouldRemove()
     {
-        //var command = new RemoveCompany.Command { Id = _company1.Id };
         await Client.DeleteAsync($"api/companies/{_company2.Id}");
         var companies = (await Client.GetAsync<PagedResponse<GetCompanies.Response.Item>>(
                 new Uri("api/companies", UriKind.RelativeOrAbsolute),

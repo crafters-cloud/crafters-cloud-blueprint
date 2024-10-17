@@ -20,8 +20,8 @@ public class User : EntityWithCreatedUpdated
     public Guid? CompanyId { get; private set; }
     public Company? Company { get; private set; }
 
-    private readonly IList<UserCompanyHistories> _userCompanyHistories = [];
-    public ICollection<UserCompanyHistories> UserCompanyHistories => _userCompanyHistories;
+    private readonly IList<UserCompanyHistory> _userCompanyHistories = [];
+    public ICollection<UserCompanyHistory> UserCompanyHistories => _userCompanyHistories;
 
     public static User Create(CreateOrUpdateUser.Command command)
     {
@@ -52,7 +52,7 @@ public class User : EntityWithCreatedUpdated
         AddDomainEvent(new UserUpdatedDomainEvent(EmailAddress));
     }
 
-    private void UpdateUserCompanyHistories(Guid? companyId) => UserCompanyHistories.Add(new UserCompanyHistories()
+    private void UpdateUserCompanyHistories(Guid? companyId) => UserCompanyHistories.Add(new UserCompanyHistory()
     {
         CompanyId = companyId,
         UserId = Id,

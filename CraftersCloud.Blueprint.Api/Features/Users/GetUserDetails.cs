@@ -51,7 +51,7 @@ public static class GetUserDetails
         public MappingProfile()
         {
             CreateMap<User, Response>();
-            CreateMap<UserCompanyHistories, UserCompanyHistoryResponse>();
+            CreateMap<UserCompanyHistory, UserCompanyHistoryResponse>();
         }
     }
 
